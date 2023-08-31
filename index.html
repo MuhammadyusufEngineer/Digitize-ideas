@@ -16,70 +16,89 @@
   </div> -->
 
   <header class="bg-yellow">
-    <nav class="py-[3vw]">
+    <nav class="bg-yellow py-[3vw]">
       <div class="container">
         <div class="flex items-center justify-between">
-          <div class="font-regular text-[1.4vw] logo">
-            HumbleBee AI
+          <div class="logo font-regular text-[7vw] mt-[2vw] md:mt-0 md:text-[1.4vw] relative z-[21]">
+            HumbleBeeAI
           </div>
-          <ul class="flex items-center gap-[6vw] text-[1.3vw]">
+          <ul
+            class="menu-list absolute md:relative top-0 -left-full md:left-0 bg-yellow z-20 w-full h-full flex flex-col md:flex-row items-center justify-center md:justify-end gap-[6vw] text-[6vw] md:text-[1.3vw] duration-300 ease-out">
             <li><a href="#" class="font-light">About Us</a></li>
             <li><a href="#" class="font-light">Project</a></li>
             <li><a href="#" class="font-light">Services</a></li>
             <li><a href="#" class="font-light">Let's talk</a></li>
           </ul>
+          <div class="menu-btn block md:hidden w-[10vw] h-[10vw] relative z-[21]">
+            <img src="./assets/img/menu.png" alt="burger menu icon">
+          </div>
         </div>
       </div>
     </nav>
     <main class="relative mt-[6vw] overflow-hidden">
       <div class="container">
-        <div class="flex justify-between">
-          <h1 class="text-[11.2vw] -tracking-[0.8vw] leading-none font-bold uppercase">digitize <br>ideas</h1>
-          <div class="w-1/2 flex flex-col items-end">
+        <div class="flex flex-col md:flex-row justify-between">
+          <h1 class="text-[17vw] md:text-[11.2vw] -tracking-[0.8vw] leading-none font-bold uppercase">digitize <br>ideas
+          </h1>
+          <div class="w-full md:w-1/2 flex flex-col items-end">
             <div
-              class="w-[85%] p-[0.5vw] bg-[url('../img/abstract.jpg')] bg-no-repeat bg-cover bg-center rounded-full overflow-nonde">
+              class="hidden md:block w-[85%] p-[0.5vw] bg-[url('../img/abstract.jpg')] bg-no-repeat bg-cover bg-center rounded-full overflow-nonde">
               <div
                 class="w-[5.5vw] h-[5.5vw] flex items-center justify-center bg-dark border-4 border-darker rounded-full">
                 <img src="./assets/img/playbtn.png" class="w-[2vw]" alt="">
               </div>
             </div>
-            <div class="w-[85%] flex items-center justify-center py-[2vw] gap-8">
+            <div class="hidden md:flex w-[85%] items-center justify-center py-[2vw] gap-8">
               <img class="w-[2.5vw]" src="./assets/img/star-2.png" alt="star">
               <img class="w-[2.5vw]" src="./assets/img/star-2.png" alt="star">
               <img class="w-[2.5vw]" src="./assets/img/star-2.png" alt="star">
             </div>
-            <p class="text-[1.3vw] font-light">The art of visual communication, creatively impacting the world around
+            <p class="text-[3.5vw] md:text-[1.3vw] font-light my-[5vw] md:m-0">The art of visual communication,
+              creatively impacting the
+              world around
               us-one good
               design at a time, design like you mean it!</p>
           </div>
         </div>
+        <div class="block md:hidden group button bg-dark text-[5vw] text-yellow border-dark mb-[6vw] mt-[7vw]">
+          <p class="py-[4vw]">Let's Talk</p>
+          <div class="relative w-[5vw] h-[5vw] overflow-hidden">
+            <img
+              class="absolute z-10 top-0 left-0 translate-0 translate-0 group-hover:-translate-y-[7vw] group-hover:translate-x-[7vw] group-hover:duration-500 w-[5vw]"
+              src="./assets/img/arrow-up.png" alt="arrow up">
+            <img
+              class="absolute z-10 top-0 -translate-x-[7vw] translate-y-[7vw] group-hover:translate-x-0 group-hover:translate-y-0 group-hover:duration-500 ease-out left-0 w-[5vw]"
+              src="./assets/img/arrow-up.png" alt="arrow up">
+          </div>
+        </div>
         <div class="flex items-center justify-between gap-[2vw] my-[2vw]">
-          <div class="flex gap-[1.5vw]">
-            <div class="button border-darker">
+          <div class="flex gap-[1.5vw] w-full md:w-auto">
+            <div class="w-1/2 p-0 md:w-auto button border-transparent md:border-darker">
               <div>
-                <img class="w-[2vw]" src="./assets/img/crown.png" alt="crown icon">
+                <img class="w-[5vw] md:w-[2vw]" src="./assets/img/crown.png" alt="crown icon">
               </div>
-              <p class="text-[1.2vw]">2022 Best Agency</p>
+              <p class="text-[2.7vw] md:text-[1.2vw]">2022 Best Agency</p>
             </div>
-            <div class="button border-darker">
+            <div class="w-1/2 p-0 md:w-auto button border-transparent md:border-darker">
               <div>
-                <img class="w-[2vw]" src="./assets/img/globus.png" alt="globus icon">
+                <img class="w-[5vw] md:w-[2vw]" src="./assets/img/globus.png" alt="globus icon">
               </div>
-              <p class="text-[1.2vw]">World Class Agency</p>
+              <p class="text-[2.7vw] md:text-[1.2vw]">World Class Agency</p>
             </div>
           </div>
-          <div class="relative h-[1px] w-2/5 bg-[#badd38] header-line">
+          <div class="hidden md:block relative h-[1px] w-2/5 bg-[#badd38] header-line">
           </div>
-          <div class="relative flex items-center w-[3.5%] h-[1.5vw]">
+          <div class="hidden md:flex relative items-center w-[3.5%] h-[1.5vw]">
             <div class="absolute top-0 left-0 w-[1.5vw] h-full border border-[#badd38] rounded-full"></div>
             <div class="absolute top-0 left-1/3 w-[1.5vw] h-full border border-[#badd38] rounded-full"></div>
             <div class="absolute top-0 left-[66%] w-[1.5vw] h-full border border-[#badd38] rounded-full"></div>
           </div>
         </div>
         <div class="relative mt-[7vw] w-full">
-          <img class="w-full rounded-tl-[100px] rounded-tr-[100px]" src="./assets/img/hero.png" alt="abstract photo">
+          <img class="w-full rounded-tl-[30px] rounded-tr-[30px]  md:rounded-tl-[100px] md:rounded-tr-[100px]"
+            src="./assets/img/hero.png" alt="abstract photo">
           <div
-            class="group absolute top-0 z-[100] -translate-y-1/3 right-[10vw] w-[13vw] h-[13vw] rounded-full flex items-center justify-center bg-dark border-[5px] border-darker overflow-hidden">
+            class="group absolute top-0 z-[100] -translate-y-1/3 right-[10vw] w-[13vw] h-[13vw] rounded-full hidden md:flex items-center justify-center bg-dark border-[5px] border-darker overflow-hidden">
             <div class="relative w-[5vw] h-[5vw]">
               <img
                 class="absolute z-10 top-0 left-0 translate-0 translate-0 group-hover:-translate-y-[7vw] group-hover:translate-x-[7vw] group-hover:duration-500 w-[5vw]"
@@ -94,59 +113,64 @@
       <div
         class="marquee-effect absolute bottom-0 left-0 whitespace-nowrap flex items-center gap-[3vw] bg-dark p-[3vw]">
         <!-- <img class="w-[3vw]" src="./assets/img/star-3.png" alt="star"> -->
-        <p class="text-[3.5vw] text-yellow font-bold uppercase">discuss your ideas</p>
-        <img class="w-[3vw]" src="./assets/img/star-3.png" alt="star">
-        <p class="text-[3.5vw] text-yellow font-bold uppercase">discuss your ideas</p>
-        <img class="w-[3vw]" src="./assets/img/star-3.png" alt="star">
-        <p class="text-[3.5vw] text-yellow font-bold uppercase">discuss your ideas</p>
-        <img class="w-[3vw]" src="./assets/img/star-3.png" alt="star">
+        <p class="text-[5vw] md:text-[3.5vw] text-yellow font-bold uppercase">discuss your ideas</p>
+        <img class="w-[5vw]" src="./assets/img/star-3.png" alt="star">
+        <p class="text-[5vw] md:text-[3.5vw] text-yellow font-bold uppercase">discuss your ideas</p>
+        <img class="w-[5vw]" src="./assets/img/star-3.png" alt="star">
+        <p class="text-[5vw] md:text-[3.5vw] text-yellow font-bold uppercase">discuss your ideas</p>
+        <img class="w-[5vw]" src="./assets/img/star-3.png" alt="star">
       </div>
     </main>
   </header>
 
   <section class="py-16 bg-darkest" id="our-services">
     <div class="container">
-      <div class="flex items-end">
-        <div class="w-[60%]">
-          <h2 class="text-[5vw] font-bold text-light tracking-tighter uppercase">our services
-            <span class="inline-block w-[1.5vw] h-[1.5vw] bg-yellow rounded-full"></span>
+      <div class="flex flex-col md:flex-row items-end">
+        <div class="w-full md:w-[60%]">
+          <h2 class="text-[10vw] md:text-[5vw] font-bold text-light leading-none tracking-tighter uppercase">our
+            services
+            <span class="inline-block w-[3vw] md:w-[1.5vw] h-[3vw] md:h-[1.5vw] bg-yellow rounded-full"></span>
           </h2>
-          <p class="text-[1.2vw] font-light text-lighter leading-loose mt-[0.5vw]">Every one of us loves something
+          <p
+            class="text-[3vw] md:text-[1.2vw] font-light text-lighter leading-tighter md:leading-loose my-[5vw] md:mt-[0.5vw] md:mb-0">
+            Every
+            one of us loves
+            something
             different. So,explore the world through the lens of our visual capabilites, and find what you love</p>
         </div>
-        <div class="w-[40%]">
-          <div class="flex flex-wrap items-end justify-end gap-[1.3vw]">
+        <div class="w-full md:w-[40%]">
+          <div class="flex flex-wrap items-end justify-start md:justify-end gap-[2vw] md:gap-[1.3vw]">
             <div
               class="group button text-lighter hover:text-light border-lighter hover:border-light duration-300 cursor-pointer">
-              <img class="w-[2.3vw] opacity-50 group-hover:opacity-100 duration-300" src="./assets/img/globus-white.png"
-                alt="globus">
-              <p class="text-[1.2vw]">AI</p>
+              <img class="w-[5vw] md:w-[2.3vw] opacity-50 group-hover:opacity-100 duration-300"
+                src="./assets/img/globus-white.png" alt="globus">
+              <p class="text-[3vw] md:text-[1.2vw] p-[2vw]">AI</p>
             </div>
             <div
               class="group button text-lighter hover:text-light border-lighter hover:border-light duration-300 cursor-pointer">
-              <img class="w-[2.3vw] opacity-50 group-hover:opacity-100 duration-300" src="./assets/img/globus-white.png"
-                alt="globus">
-              <p class="text-[1.2vw]">Machine Learning</p>
+              <img class="w-[5vw] md:w-[2.3vw] opacity-50 group-hover:opacity-100 duration-300"
+                src="./assets/img/globus-white.png" alt="globus">
+              <p class="text-[3vw] md:text-[1.2vw] p-[2vw]">Machine Learning</p>
             </div>
             <div
               class="group button text-lighter hover:text-light border-lighter hover:border-light duration-300 cursor-pointer">
-              <img class="w-[2.3vw] opacity-50 group-hover:opacity-100 duration-300" src="./assets/img/globus-white.png"
-                alt="globus">
-              <p class="text-[1.2vw]">Computer Vision</p>
+              <img class="w-[5vw] md:w-[2.3vw] opacity-50 group-hover:opacity-100 duration-300"
+                src="./assets/img/globus-white.png" alt="globus">
+              <p class="text-[3vw] md:text-[1.2vw] p-[2vw]">Computer Vision</p>
             </div>
             <div
               class="group button text-lighter hover:text-light border-lighter hover:border-light duration-300 cursor-pointer">
-              <img class="w-[2.3vw] opacity-50 group-hover:opacity-100 duration-300" src="./assets/img/globus-white.png"
-                alt="globus">
-              <p class="text-[1.2vw]">NLP</p>
+              <img class="w-[5vw] md:w-[2.3vw] opacity-50 group-hover:opacity-100 duration-300"
+                src="./assets/img/globus-white.png" alt="globus">
+              <p class="text-[3vw] md:text-[1.2vw] p-[2vw]">NLP</p>
             </div>
           </div>
         </div>
       </div>
       <div class="border-t border-darker mt-[4vw]">
         <div
-          class="group flex items-center justify-between p-[1.7vw] border-b border-darker hover:bg-darker cursor-pointer duration-300">
-          <p class="text-[3.5vw] font-regular text-lighter group-hover:text-light duration-300">
+          class="group flex items-center justify-between p-[3vw] md:p-[1.7vw] border-b border-darker hover:bg-darker cursor-pointer duration-300">
+          <p class="text-[5vw] md:text-[3.5vw] font-regular text-lighter group-hover:text-light duration-300">
             UI/UX Design
           </p>
           <div class="relative p-[4vw] w-[5vw] h-[5vw] group-hover:bg-yellow duration-300 overflow-hidden">
@@ -159,8 +183,8 @@
           </div>
         </div>
         <div
-          class="group flex items-center justify-between p-[1.7vw] border-b border-darker hover:bg-darker cursor-pointer duration-300">
-          <p class="text-[3.5vw] font-regular text-lighter group-hover:text-light duration-300">
+          class="group flex items-center justify-between p-[3vw] md:p-[1.7vw] border-b border-darker hover:bg-darker cursor-pointer duration-300">
+          <p class="text-[5vw] md:text-[3.5vw] font-regular text-lighter group-hover:text-light duration-300">
             Web Design
           </p>
           <div class="relative p-[4vw] w-[5vw] h-[5vw] group-hover:bg-yellow duration-300 overflow-hidden">
@@ -173,8 +197,8 @@
           </div>
         </div>
         <div
-          class="group flex items-center justify-between p-[1.7vw] border-b border-darker hover:bg-darker cursor-pointer duration-300">
-          <p class="text-[3.5vw] font-regular text-lighter group-hover:text-light duration-300">
+          class="group flex items-center justify-between p-[3vw] md:p-[1.7vw] border-b border-darker hover:bg-darker cursor-pointer duration-300">
+          <p class="text-[5vw] md:text-[3.5vw] font-regular text-lighter group-hover:text-light duration-300">
             Brand Design
           </p>
           <div class="relative p-[4vw] w-[5vw] h-[5vw] group-hover:bg-yellow duration-300 overflow-hidden">
@@ -187,8 +211,8 @@
           </div>
         </div>
         <div
-          class="group flex items-center justify-between p-[1.7vw] border-b border-darker hover:bg-darker cursor-pointer duration-300">
-          <p class="text-[3.5vw] font-regular text-lighter group-hover:text-light duration-300">
+          class="group flex items-center justify-between p-[3vw] md:p-[1.7vw] border-b border-darker hover:bg-darker cursor-pointer duration-300">
+          <p class="text-[5vw] md:text-[3.5vw] font-regular text-lighter group-hover:text-light duration-300">
             Graphic Design
           </p>
           <div class="relative p-[4vw] w-[5vw] h-[5vw] group-hover:bg-yellow duration-300 overflow-hidden">
@@ -207,7 +231,8 @@
   <section class="bg-darkest" id="about-us">
     <div class="container">
       <div class="bg-darker py-[10vw] px-[5vw]">
-        <p class="text-[4.4vw] text-light font-regular leading-tight -word-tight -tracking-wider uppercase">
+        <p
+          class="text-[6vw] md:text-[4.4vw] text-light font-regular leading-tight -word-tight -tracking-wider uppercase">
           the team <img class="inline-block h-[5vw]" src="./assets/img/inline-1.png"> of creative minds knows
           <img class="inline-block h-[5vw]" src="./assets/img/inline-2.png">
           how to to
@@ -220,54 +245,60 @@
 
   <section class="bg-darkest py-16" id="best-project">
     <div class="container">
-      <div class="flex justify-between">
-        <h2 class="w-[60%] text-[5vw] font-bold text-light tracking-tighter uppercase">best project
+      <div class="flex flex-col md:flex-row justify-between">
+        <h2
+          class="w-full md:w-[60%] text-[10vw] md:text-[5vw] font-bold text-light leading-none tracking-tighter uppercase">
+          best
+          project
           <span class="inline-block w-[1.5vw] h-[1.5vw] bg-yellow rounded-full"></span>
         </h2>
-        <p class="w-[40%] text-[1.2vw] font-light text-lighter leading-loose mt-[0.5vw]">Creative fuels design, design
+        <p
+          class="w-full md:w-[40%] text-[3vw] md:text-[1.2vw] font-light text-lighter leading-tighter md:leading-loose my-[5vw] md:mt-[0.5vw] md:mb-0">
+          Creative
+          fuels design, design
           fuels
           creativity, be here for more, are you in love with a creative?</p>
       </div>
-      <div class="flex flex-wrap gap-[1.3vw] mt-[1vw]">
+      <div class="flex flex-wrap gap-[3vw] md:gap-[1.3vw] mt-[1vw] mb-[1vw] md:mb-0">
         <div
-          class="group button text-lighter hover:text-light border-lighter hover:border-light duration-300 cursor-pointer">
-          <img class="w-[2.3vw] opacity-50 group-hover:opacity-100 duration-300" src="./assets/img/globus-white.png"
-            alt="globus">
-          <p class="text-[1.2vw]">AI</p>
+          class="group button text-lighter hover:text-light p-[2vw] md:py-[0.4vw] md:px-[1vw] border-lighter hover:border-light duration-300 cursor-pointer">
+          <img class="w-[5vw] md:w-[2.3vw] opacity-50 group-hover:opacity-100 duration-300"
+            src="./assets/img/globus-white.png" alt="globus">
+          <p class="text-[3vw] md:text-[1.2vw]">AI</p>
         </div>
         <div
-          class="group button text-lighter hover:text-light border-lighter hover:border-light duration-300 cursor-pointer">
-          <img class="w-[2.3vw] opacity-50 group-hover:opacity-100 duration-300" src="./assets/img/globus-white.png"
-            alt="globus">
-          <p class="text-[1.2vw]">Machine Learning</p>
+          class="group button text-lighter hover:text-light p-[2vw] md:py-[0.4vw] md:px-[1vw] border-lighter hover:border-light duration-300 cursor-pointer">
+          <img class="w-[5vw] md:w-[2.3vw] opacity-50 group-hover:opacity-100 duration-300"
+            src="./assets/img/globus-white.png" alt="globus">
+          <p class="text-[3vw] md:text-[1.2vw]">Machine Learning</p>
         </div>
         <div
-          class="group button text-lighter hover:text-light border-lighter hover:border-light duration-300 cursor-pointer">
-          <img class="w-[2.3vw] opacity-50 group-hover:opacity-100 duration-300" src="./assets/img/globus-white.png"
-            alt="globus">
-          <p class="text-[1.2vw]">Computer Vision</p>
+          class="group button text-lighter hover:text-light p-[2vw] md:py-[0.4vw] md:px-[1vw] border-lighter hover:border-light duration-300 cursor-pointer">
+          <img class="w-[5vw] md:w-[2.3vw] opacity-50 group-hover:opacity-100 duration-300"
+            src="./assets/img/globus-white.png" alt="globus">
+          <p class="text-[3vw] md:text-[1.2vw]">Computer Vision</p>
         </div>
         <div
-          class="group button text-lighter hover:text-light border-lighter hover:border-light duration-300 cursor-pointer">
-          <img class="w-[2.3vw] opacity-50 group-hover:opacity-100 duration-300" src="./assets/img/globus-white.png"
-            alt="globus">
-          <p class="text-[1.2vw]">NLP</p>
+          class="group button text-lighter hover:text-light p-[2vw] md:py-[0.4vw] md:px-[1vw] border-lighter hover:border-light duration-300 cursor-pointer">
+          <img class="w-[5vw] md:w-[2.3vw] opacity-50 group-hover:opacity-100 duration-300"
+            src="./assets/img/globus-white.png" alt="globus">
+          <p class="text-[3vw] md:text-[1.2vw]">NLP</p>
         </div>
       </div>
-      <div class="grid grid-cols-3 gap-[2vw] mt-[4vw]">
-        <div>
+      <div class="grid grid-cols-2 md:grid-cols-3 gap-[5vw] md:gap-[2vw] mt-[4vw]">
+        <div class="col-span-2 md:col-span-1">
           <img src="./assets/img/grid-1.png" alt="">
         </div>
         <div class="col-span-2">
           <img src="./assets/img/grid-4.png" alt="">
         </div>
-        <div>
+        <div class="col-span-2 md:col-span-1">
           <img src="./assets/img/grid-2.png" alt="">
         </div>
-        <div>
+        <div class="col-span-2 md:col-span-1">
           <img src="./assets/img/grid-3.png" alt="">
         </div>
-        <div class="group relative rounded-br-[80px] overflow-hidden cursor-pointer">
+        <div class="col-span-2 md:col-span-1 group relative rounded-br-[80px] overflow-hidden cursor-pointer">
           <img class="h-full w-auto" src="./assets/img/abstract-light.jpg" alt="">
           <div class="absolute left-[2vw] bottom-[1vw] z-20">
             <p class="text-light text-[1.3vw] font-regular uppercase mb-[1vw]">2022</p>
@@ -291,7 +322,7 @@
 
   <footer class="bg-darkest pb-8">
     <div class="container">
-      <div class="bg-yellow rounded-br-[80px] rounded-bl-[80px] p-[5vw]">
+      <div class="bg-yellow rounded-bl-[30px] rounded-br-[30px] md:rounded-br-[80px] md:rounded-bl-[80px] p-[5vw]">
         <div class="flex items-center justify-between">
           <div class="relative h-[1px] w-[35%] bg-[#badd38] header-line">
           </div>
@@ -303,26 +334,31 @@
           <div class="relative h-[1px] w-[35%] bg-[#badd38] header-line">
           </div>
         </div>
-        <h2 class="text-[5vw] font-bold tracking-[-0.1rem] text-center leading-tight uppercase mt-[2vw]">let's discuss
+        <h2 class="text-[8vw] md:text-[5vw] font-bold tracking-[-0.1rem] text-center leading-tight uppercase mt-[2vw]">
+          let's discuss
           <br>your
           ideas
         </h2>
-        <div class="flex items-center justify-center gap-[1.5vw] mt-[3vw]">
-          <div class="button uppercase border border-dark bg-dark hover:bg-yellow text-yellow hover:text-dark">
-            <p class="p-[1vw] text-[1.5vw]">Talks now</p>
+        <div
+          class="flex flex-col md:flex-row items-center justify-center gap-[3vw] md:gap-[1.5vw] mb-[5vw] md:mb-0 mt-[3vw]">
+          <div
+            class="button w-full md:w-auto uppercase border border-dark bg-dark hover:bg-yellow text-yellow hover:text-dark">
+            <p class="p-[3vw] md:p-[1vw] text-[5vw] md:text-[1.5vw]">Talks now</p>
           </div>
-          <div class="button uppercase border border-dark hover:bg-dark hover:text-yellow">
-            <p class="p-[1vw] text-[1.5vw]">Follow us</p>
+          <div class="button w-full md:w-auto uppercase border border-dark hover:bg-dark hover:text-yellow">
+            <p class="p-[3vw] md:p-[1vw] text-[5vw] md:text-[1.5vw]">Follow us</p>
           </div>
         </div>
       </div>
       <div class="mt-[7.5vw]">
-        <h3 class="text-[3vw] text-yellow font-regular text-center">HumbleBee AI</h3>
+        <h3 class="text-[5vw] md:text-[3vw] text-yellow font-regular text-left md:text-center">HumbleBee AI</h3>
         <div class="flex items-center justify-between mt-[6vw]">
-          <a href="#" class="text-[1.2vw] text-yellow font-light uppercase tracking-tight">terms & agreements</a>
-          <a href="#" class="text-[1.2vw] text-yellow font-light uppercase tracking-tight">@<span
+          <a href="#" class="text-[3vw] md:text-[1.2vw] text-yellow font-light uppercase tracking-tight">terms &
+            agreements</a>
+          <a href="#" class="hidden md:block text-[1.2vw] text-yellow font-light uppercase tracking-tight">@<span
               class="year">2023</span> humblebee ai all rights resolved</a>
-          <a href="#" class="text-[1.2vw] text-yellow font-light uppercase tracking-tight">privacy policy</a>
+          <a href="#" class="text-[3vw] md:text-[1.2vw] text-yellow font-light uppercase tracking-tight">privacy
+            policy</a>
         </div>
       </div>
     </div>

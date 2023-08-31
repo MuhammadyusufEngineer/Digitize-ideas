@@ -29,3 +29,17 @@
 //     xSet(pos.x);
 //     ySet(pos.y);
 // });
+
+// mobile menu
+
+let menuBtn = document.querySelector('.menu-btn')
+let menuList = document.querySelector('.menu-list')
+
+
+menuBtn.onclick = () => {
+    let isMenuActive = menuList.classList.contains('-left-full') ? ['-left-full', 'left-0'] : ['left-0', '-left-full']
+    let isBtnActive = menuBtn.classList.contains('active') ? './assets/img/menu.png' : './assets/img/close.png'
+    menuBtn.classList.toggle('active')
+    menuList.classList.replace(...isMenuActive)
+    menuBtn.querySelector('img').src = isBtnActive
+}
