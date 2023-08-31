@@ -1,10 +1,10 @@
-let cursor = document.querySelector('.cursor')
-document.onmousemove = (e) => {
-    const height = cursor.offsetHeight
-    const width = cursor.offsetWidth
+// let cursor = document.querySelector('.cursor')
+// document.onmousemove = (e) => {
+//     const height = cursor.offsetHeight
+//     const width = cursor.offsetWidth
 
-    cursor.style.translate = `${e.pageX - width / 2}px ${e.pageY - height / 2}px`
-}
+//     cursor.style.translate = `${e.pageX - width / 2}px ${e.pageY - height / 2}px`
+// }
 
 // const cursor = document.querySelector(".cursor");
 // const pos = { x: window.innerWidth / 2, y: window.innerHeight / 2 };
