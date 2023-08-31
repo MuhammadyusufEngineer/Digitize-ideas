@@ -1,0 +1,94 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+    font-family: 'bold';
+    src: url('../font/Herokid-SemiBoldExpanded.otf');
+}
+
+@font-face {
+    font-family: 'regular';
+    src: url('../font/Herokid-RegularExpanded.otf');
+}
+
+@font-face {
+    font-family: 'light';
+    src: url('../font/Herokid-LightExpanded.otf');
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* cursor: none; */
+    user-select: none;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+.container {
+    width: 90%;
+    max-width: 90%;
+    margin: 0 auto;
+}
+
+.underline-animation {
+    display: inline-block;
+    position: relative;
+}
+
+.underline-animation:after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 0.1rem;
+    bottom: 0;
+    left: 0;
+    background-color: #0087ca;
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
+}
+
+.underline-animation:hover:after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+.button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    border-radius: 999px;
+    border-width: 1px;
+    border-style: solid;
+    font-family: 'light';
+    padding: 0.4vw 1vw;
+    line-height: 50%;
+    cursor: pointer;
+}
+
+.header-line::before,
+.header-line::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    width: 0.5vw;
+    height: 0.5vw;
+    border-radius: 999px;
+    background-color: inherit;
+}
+
+.header-line::before {
+    left: 0;
+    translate: -50% -50%;
+}
+
+.header-line::after {
+    right: 0;
+    translate: 50% -50%;
+}
