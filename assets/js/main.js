@@ -43,3 +43,62 @@ menuBtn.onclick = () => {
     menuList.classList.replace(...isMenuActive)
     menuBtn.querySelector('img').src = isBtnActive
 }
+
+// let animationNames = document.querySelectorAll('[animation]');
+// for (let item of animationNames) {
+//     let name = item.getAttribute('animation')
+//         `${name}(${item})`
+// }
+
+// let options = {
+//     root: null,
+//     rootMargin: '-100px',
+//     threshold: 0.2
+// }
+
+// function callback(entries, observer) {
+//     entries.forEach(entry => {
+//         if (entry.isIntersecting) {
+//             // Check the element's class or ID and trigger the appropriate animation
+//             // if (entry.target.classList.contains('animate')) {
+//             entry.target.classList.add('fade');
+//             console.log('working...')
+//             // } else if (targetElement.classList.contains('animate-fade-in')) {
+//             // targetElement.classList.add('fade-in-animation');
+//         }
+//         // } else {
+//         // entry.target.classList.remove('fade', 'scale', 'scaleX', 'scaleY');
+//         // }
+//     });
+// };
+
+// let observer = new IntersectionObserver(callback, options)
+// let fadeElements = document.querySelectorAll('.animate')
+// fadeElements.forEach(elem => {
+//     observer.observe(elem)
+// })
+
+let options = {
+    root: null,
+    rootMargin: '-100px',
+    threshold: 0.2
+}
+let callback = (entries, observer) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('staggerWord')
+            entry.target.style.transform = 'translateY(0%)'
+        }
+    })
+}
+let observer = new IntersectionObserver(callback, options)
+let fadeElements = document.querySelectorAll('.animate')
+fadeElements.forEach(elem => {
+    observer.observe(elem)
+})
+
+let animItems = document.querySelectorAll("[delay]");
+animItems.forEach((item) => {
+    let speed = item.getAttribute("delay");
+    item.style.animationDelay = `${speed}ms`;
+});
