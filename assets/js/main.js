@@ -6,32 +6,9 @@
 //     cursor.style.translate = `${e.pageX - width / 2}px ${e.pageY - height / 2}px`
 // }
 
-// const cursor = document.querySelector(".cursor");
-// const pos = { x: window.innerWidth / 2, y: window.innerHeight / 2 };
-// const mouse = { x: pos.x, y: pos.y };
-// const speed = 0.2;
-
-// const xSet = gsap.quickSetter(cursor, "x", "px");
-// const ySet = gsap.quickSetter(cursor, "y", "px");
-
-// window.addEventListener("mousemove", e => {
-//     mouse.x = e.x;
-//     mouse.y = e.y;
-// });
-
-// gsap.ticker.add(() => {
-
-//     // adjust speed for higher refresh monitors
-//     const dt = 1.0 - Math.pow(1.0 - speed, gsap.ticker.deltaRatio());
-
-//     pos.x += (mouse.x - pos.x) * dt;
-//     pos.y += (mouse.y - pos.y) * dt;
-//     xSet(pos.x);
-//     ySet(pos.y);
-// });
+gsap.registerPlugin(ScrollTrigger)
 
 // mobile menu
-
 let menuBtn = document.querySelector('.menu-btn')
 let menuList = document.querySelector('.menu-list')
 
@@ -44,61 +21,99 @@ menuBtn.onclick = () => {
     menuBtn.querySelector('img').src = isBtnActive
 }
 
-// let animationNames = document.querySelectorAll('[animation]');
-// for (let item of animationNames) {
-//     let name = item.getAttribute('animation')
-//         `${name}(${item})`
-// }
-
-// let options = {
-//     root: null,
-//     rootMargin: '-100px',
-//     threshold: 0.2
-// }
-
-// function callback(entries, observer) {
-//     entries.forEach(entry => {
-//         if (entry.isIntersecting) {
-//             // Check the element's class or ID and trigger the appropriate animation
-//             // if (entry.target.classList.contains('animate')) {
-//             entry.target.classList.add('fade');
-//             console.log('working...')
-//             // } else if (targetElement.classList.contains('animate-fade-in')) {
-//             // targetElement.classList.add('fade-in-animation');
-//         }
-//         // } else {
-//         // entry.target.classList.remove('fade', 'scale', 'scaleX', 'scaleY');
-//         // }
-//     });
-// };
-
 // let observer = new IntersectionObserver(callback, options)
 // let fadeElements = document.querySelectorAll('.animate')
 // fadeElements.forEach(elem => {
 //     observer.observe(elem)
 // })
 
-let options = {
-    root: null,
-    rootMargin: '-100px',
-    threshold: 0.2
-}
-let callback = (entries, observer) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add('staggerWord')
-            entry.target.style.transform = 'translateY(0%)'
-        }
-    })
-}
-let observer = new IntersectionObserver(callback, options)
-let fadeElements = document.querySelectorAll('.animate')
-fadeElements.forEach(elem => {
-    observer.observe(elem)
+// let options = {
+//     root: null,
+//     rootMargin: '-100px',
+//     threshold: 0.2
+// }
+// let callback = (entries, observer) => {
+//     entries.forEach(entry => {
+//         if (entry.isIntersecting) {
+//             entry.target.classList.add('fade')
+//             entry.target.classList.change('opacity-0', 'opacity-100')
+//         }
+//     })
+// }
+// let observer = new IntersectionObserver(callback, options)
+// let fadeElements = document.querySelectorAll('.opacity-0')
+// fadeElements.forEach(elem => {
+//     observer.observe(elem)
+// })
+
+// let animItems = document.querySelectorAll("[delay]");
+// animItems.forEach((item) => {
+//     let speed = item.getAttribute("delay");
+//     item.style.transitionDelay = `${speed}ms`;
+// });
+
+gsap.from('.logo, nav li', 2, {
+    top: '5vw',
+    opacity: 0,
+    ease: 'power4.inOut',
+    delay: 1,
+    stagger: {
+        amount: 0.3
+    }
 })
 
-let animItems = document.querySelectorAll("[delay]");
-animItems.forEach((item) => {
-    let speed = item.getAttribute("delay");
-    item.style.animationDelay = `${speed}ms`;
-});
+gsap.from('h1', 2, {
+    y: '5vw',
+    opacity: 0,
+    ease: 'power4.inOut',
+    delay: 1.5,
+    stagger: {
+        amount: 0.3
+    }
+})
+
+gsap.from('.play-wrapper, .pattern, .copy', 2, {
+    scaleY: 0,
+    ease: 'power4.inOut',
+    stagger: {
+        amount: 0.3
+    },
+    delay: 1.5,
+})
+
+gsap.from('.play-btn', 2, {
+    scale: '0',
+    ease: 'power4.inOut',
+    delay: 2
+})
+
+gsap.from('.header-line', 2, {
+    width: '0',
+    ease: 'power4.inOut',
+    delay: 3
+})
+
+gsap.from('.btns', 2, {
+    x: 50,
+    opacity: 0,
+    ease: 'power4.inOut',
+    delay: 3
+})
+
+gsap.from('.img-wrapper', 2, {
+    width: '100%',
+    ease: 'power4.inOut',
+    delay: 3,
+})
+
+gsap.from('.arrow', 2, {
+    scale: 0,
+    delay: 3,
+    ease: 'power4.inOut'
+})
+
+gsap.from('.marquee-effect', 2, {
+    bottom: '-10rem',
+    ease: 'power4.inOut',
+    delay: 4
+})
