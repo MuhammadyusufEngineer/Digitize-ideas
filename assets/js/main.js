@@ -6,7 +6,7 @@
 //     cursor.style.translate = `${e.pageX - width / 2}px ${e.pageY - height / 2}px`
 // }
 
-gsap.registerPlugin(ScrollTrigger)
+// gsap.registerPlugin(ScrollTrigger)
 
 // mobile menu
 let menuBtn = document.querySelector('.menu-btn')
@@ -14,11 +14,13 @@ let menuList = document.querySelector('.menu-list')
 
 
 menuBtn.onclick = () => {
+    let btnImgs = document.querySelectorAll('.menu-btn img')
+    btnImgs.forEach(i => i.classList.toggle('hidden'))
     let isMenuActive = menuList.classList.contains('-left-full') ? ['-left-full', 'left-0'] : ['left-0', '-left-full']
-    let isBtnActive = menuBtn.classList.contains('active') ? './assets/img/menu.png' : './assets/img/close.png'
-    menuBtn.classList.toggle('active')
+    // let isBtnActive = menuBtn.classList.contains('active') ? './assets/img/menu.png' : './assets/img/close.png'
+    // menuBtn.classList.toggle('active')
     menuList.classList.replace(...isMenuActive)
-    menuBtn.querySelector('img').src = isBtnActive
+    // menuBtn.querySelector('img').src = isBtnActive
 }
 
 // let observer = new IntersectionObserver(callback, options)
@@ -52,68 +54,75 @@ menuBtn.onclick = () => {
 //     item.style.transitionDelay = `${speed}ms`;
 // });
 
-gsap.from('.logo, nav li', 2, {
-    top: '5vw',
-    opacity: 0,
-    ease: 'power4.inOut',
-    delay: 1,
-    stagger: {
-        amount: 0.3
-    }
-})
+function animations() {
+    gsap.from('.logo, nav li, .menu-btn', 2, {
+        top: '5vw',
+        opacity: 0,
+        ease: 'power4.inOut',
+        delay: 1,
+        stagger: {
+            amount: 0.3
+        }
+    })
 
-gsap.from('h1', 2, {
-    y: '5vw',
-    opacity: 0,
-    ease: 'power4.inOut',
-    delay: 1.5,
-    stagger: {
-        amount: 0.3
-    }
-})
+    gsap.from('h1', 2, {
+        y: '5vw',
+        opacity: 0,
+        ease: 'power4.inOut',
+        delay: 1.5,
+        stagger: {
+            amount: 0.3
+        }
+    })
 
-gsap.from('.play-wrapper, .pattern, .copy', 2, {
-    scaleY: 0,
-    ease: 'power4.inOut',
-    stagger: {
-        amount: 0.3
-    },
-    delay: 1.5,
-})
+    gsap.from('.play-wrapper, .pattern, .copy', 2, {
+        scaleY: 0,
+        ease: 'power4.inOut',
+        stagger: {
+            amount: 0.3
+        },
+        delay: 1.5,
+    })
 
-gsap.from('.play-btn', 2, {
-    scale: '0',
-    ease: 'power4.inOut',
-    delay: 2
-})
+    gsap.from('.play-btn', 2, {
+        scale: '0',
+        ease: 'power4.inOut',
+        delay: 2
+    })
 
-gsap.from('.header-line', 2, {
-    width: '0',
-    ease: 'power4.inOut',
-    delay: 3
-})
+    gsap.from('.header-line', 2, {
+        width: '0',
+        ease: 'power4.inOut',
+        delay: 3
+    })
 
-gsap.from('.btns', 2, {
-    x: 50,
-    opacity: 0,
-    ease: 'power4.inOut',
-    delay: 3
-})
+    gsap.from('.btns, .mobile-btn', 2, {
+        x: 50,
+        opacity: 0,
+        ease: 'power4.inOut',
+        delay: 3
+    })
 
-gsap.from('.img-wrapper', 2, {
-    width: '100%',
-    ease: 'power4.inOut',
-    delay: 3,
-})
+    gsap.from('.img-wrapper', 2, {
+        width: '100%',
+        ease: 'power4.inOut',
+        delay: 3,
+    })
 
-gsap.from('.arrow', 2, {
-    scale: 0,
-    delay: 3,
-    ease: 'power4.inOut'
-})
+    gsap.from('.arrow', 2, {
+        scale: 0,
+        delay: 3,
+        ease: 'power4.inOut'
+    })
 
-gsap.from('.marquee-effect', 2, {
-    bottom: '-10rem',
-    ease: 'power4.inOut',
-    delay: 4
-})
+    gsap.from('.marquee-effect', 2, {
+        bottom: '-10rem',
+        ease: 'power4.inOut',
+        delay: 4
+    })
+
+}
+
+window.onload = () => {
+    animations()
+}
