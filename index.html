@@ -9,33 +9,38 @@
   <title>Vite App</title>
 </head>
 
-<body>
+<body class="mix-blend-difference">
 
-  <!-- <div class="cursor absolute top-0 left-0 w-[1vw] h-[1vw] bg-dark rounded-full duration-100 z-[99] select-none">
-    <img class="-rotate-45" src="./assets/img/bee-2.png" alt="">
-  </div> -->
+  <div
+    class="mix-blend-difference cursor absolute top-0 left-0 w-[1vw] h-[1vw] bg-yellow rounded-full duration-100 select-none z-[999]">
+    <!-- <img src="./assets/img/cursor.png" alt=""> -->
+  </div>
 
   <header class="bg-yellow">
-    <nav class="bg-yellow py-[3vw]">
+    <nav class="py-[3vw]">
       <div class="container">
         <div class="flex items-center justify-between overflow-hidden">
           <div class="logo font-regular text-[7vw] mt-[2vw] md:mt-0 md:text-[1.4vw] relative z-[21]">
             <span>HumbleBeeAI</span>
           </div>
           <ul
-            class="menu-list absolute md:relative top-0 -left-full md:left-0 bg-yellow z-[20] w-full h-full flex flex-col md:flex-row items-center justify-center md:justify-end gap-[6vw] text-[6vw] md:text-[1.3vw] duration-300">
-            <li class="underline-animation leading-loose overflow-hidden" delay="50"><a href="#"
-                class="font-light">About
+            class="menu-list absolute md:relative top-0 -left-full md:left-0 bg-yellow md:bg-transparent z-[20] w-full h-full flex flex-col md:flex-row items-center justify-center md:justify-end gap-[6vw] text-[6vw] md:text-[1.3vw] duration-500 ease-out">
+            <li class="nav-item underline-animation overflow-hidden cursor-pointer">
+              <a name="anchor" href="#"
+                class="nav-link inline-block text-inherit leading-[120%] h-[1.4vw] font-light overflow-hidden">About
                 Us</a>
             </li>
-            <li class="underline-animation leading-loose overflow-hidden" delay="150">
-              <a href="#" class="font-light">Project</a>
+            <li class="nav-item underline-animation overflow-hidden cursor-pointer">
+              <a name="anchor" href="#"
+                class="nav-link inline-block text-inherit leading-[120%] h-[1.4vw] font-light overflow-hidden">Project</a>
             </li>
-            <li class="underline-animation leading-loose  overflow-hidden" delay="250">
-              <a href="#" class="font-light">Services</a>
+            <li class="nav-item underline-animation  overflow-hidden cursor-pointer">
+              <a name="anchor" href="#"
+                class="nav-link inline-block text-inherit leading-[120%] h-[1.4vw] font-light overflow-hidden">Services</a>
             </li>
-            <li class="underline-animation leading-loose overflow-hidden" delay="350">
-              <a href="#" class="font-light">Let's
+            <li class="nav-item underline-animation overflow-hidden cursor-pointer">
+              <a name="anchor" href="#"
+                class="nav-link inline-block text-inherit leading-[120%] h-[1.4vw] font-light overflow-hidden">Let's
                 talk</a>
             </li>
           </ul>
@@ -102,10 +107,10 @@
           </div>
           <div class="hidden md:block relative h-[1px] w-2/5 bg-[#badd38] header-line">
           </div>
-          <div class="hidden md:flex relative items-center w-[3.5%] h-[1.5vw]">
-            <div class="absolute top-0 left-0 w-[1.5vw] h-full border border-[#badd38] rounded-full"></div>
-            <div class="absolute top-0 left-1/3 w-[1.5vw] h-full border border-[#badd38] rounded-full"></div>
-            <div class="absolute top-0 left-[66%] w-[1.5vw] h-full border border-[#badd38] rounded-full"></div>
+          <div class="radios-wrapper hidden md:flex relative items-center w-[3.5%] h-[1.5vw]">
+            <div class="radio-1 absolute top-0 left-0 w-[1.5vw] h-full border border-[#badd38] rounded-full"></div>
+            <div class="radio-2 absolute top-0 left-1/3 w-[1.5vw] h-full border border-[#badd38] rounded-full"></div>
+            <div class="radio-3 absolute top-0 left-[66%] w-[1.5vw] h-full border border-[#badd38] rounded-full"></div>
           </div>
         </div>
       </div>
@@ -114,7 +119,7 @@
           <img class="w-full rounded-tl-[30px] rounded-tr-[30px]  md:rounded-tl-[100px] md:rounded-tr-[100px]"
             src="./assets/img/hero.png" alt="abstract photo">
           <div
-            class="arrow group absolute top-0 right-[10vw] -translate-y-1/3 w-[13vw] h-[13vw] rounded-full hidden md:flex items-center justify-center bg-dark border-[5px] border-darker cursor-pointer overflow-hidden z-[100]">
+            class="arrow group absolute top-0 right-[10vw] -translate-y-1/3 w-[13vw] h-[13vw] rounded-full hidden md:flex items-center justify-center bg-dark border-[5px] border-darker overflow-hidden z-[100]">
             <div class="relative w-[5vw] h-[5vw]">
               <img
                 class="absolute z-10 top-0 left-0 translate-0 translate-0 group-hover:-translate-y-[7vw] group-hover:translate-x-[7vw] group-hover:duration-500 w-[5vw]"
@@ -153,12 +158,12 @@
     <div class="container">
       <div class="flex flex-col md:flex-row items-end">
         <div class="w-full md:w-[60%]">
-          <h2 class="text-[10vw] md:text-[5vw] font-bold text-light leading-none tracking-tighter uppercase">our
+          <h2 class="text-[10vw] md:text-[5vw] font-bold text-light leading-none tracking-tighter uppercase fade">our
             services
             <span class="inline-block w-[3vw] md:w-[1.5vw] h-[3vw] md:h-[1.5vw] bg-yellow rounded-full"></span>
           </h2>
           <p
-            class="text-[3vw] md:text-[1.2vw] font-light text-lighter leading-tighter md:leading-loose my-[5vw] md:mt-[0.5vw] md:mb-0">
+            class="text-[3vw] md:text-[1.2vw] font-light text-lighter leading-tighter md:leading-loose my-[5vw] md:mt-[0.5vw] md:mb-0 fade">
             Every
             one of us loves
             something
@@ -166,26 +171,22 @@
         </div>
         <div class="w-full md:w-[40%]">
           <div class="flex flex-wrap items-end justify-start md:justify-end gap-[2vw] md:gap-[1.3vw]">
-            <div
-              class="group button text-lighter hover:text-light border-lighter hover:border-light duration-300 cursor-pointer">
+            <div class="group button text-lighter hover:text-light border-lighter hover:border-light duration-300 fade">
               <img class="w-[5vw] md:w-[2.3vw] opacity-50 group-hover:opacity-100 duration-300"
                 src="./assets/img/globus-white.png" alt="globus">
               <p class="text-[3vw] md:text-[1.2vw] p-[2vw]">AI</p>
             </div>
-            <div
-              class="group button text-lighter hover:text-light border-lighter hover:border-light duration-300 cursor-pointer">
+            <div class="group button text-lighter hover:text-light border-lighter hover:border-light duration-300 fade">
               <img class="w-[5vw] md:w-[2.3vw] opacity-50 group-hover:opacity-100 duration-300"
                 src="./assets/img/globus-white.png" alt="globus">
               <p class="text-[3vw] md:text-[1.2vw] p-[2vw]">Machine Learning</p>
             </div>
-            <div
-              class="group button text-lighter hover:text-light border-lighter hover:border-light duration-300 cursor-pointer">
+            <div class="group button text-lighter hover:text-light border-lighter hover:border-light duration-300 fade">
               <img class="w-[5vw] md:w-[2.3vw] opacity-50 group-hover:opacity-100 duration-300"
                 src="./assets/img/globus-white.png" alt="globus">
               <p class="text-[3vw] md:text-[1.2vw] p-[2vw]">Computer Vision</p>
             </div>
-            <div
-              class="group button text-lighter hover:text-light border-lighter hover:border-light duration-300 cursor-pointer">
+            <div class="group button text-lighter hover:text-light border-lighter hover:border-light duration-300 fade">
               <img class="w-[5vw] md:w-[2.3vw] opacity-50 group-hover:opacity-100 duration-300"
                 src="./assets/img/globus-white.png" alt="globus">
               <p class="text-[3vw] md:text-[1.2vw] p-[2vw]">NLP</p>
@@ -195,7 +196,7 @@
       </div>
       <div class="border-t border-darker mt-[4vw]">
         <div
-          class="group flex items-center justify-between p-[3vw] md:p-[1.7vw] border-b border-darker hover:bg-darker cursor-pointer duration-300">
+          class="group flex items-center justify-between p-[3vw] md:p-[1.7vw] border-b border-darker hover:bg-darker duration-300 fade">
           <p class="text-[5vw] md:text-[3.5vw] font-regular text-lighter group-hover:text-light duration-300">
             UI/UX Design
           </p>
@@ -209,7 +210,7 @@
           </div>
         </div>
         <div
-          class="group flex items-center justify-between p-[3vw] md:p-[1.7vw] border-b border-darker hover:bg-darker cursor-pointer duration-300">
+          class="group flex items-center justify-between p-[3vw] md:p-[1.7vw] border-b border-darker hover:bg-darker duration-300 fade">
           <p class="text-[5vw] md:text-[3.5vw] font-regular text-lighter group-hover:text-light duration-300">
             Web Design
           </p>
@@ -223,7 +224,7 @@
           </div>
         </div>
         <div
-          class="group flex items-center justify-between p-[3vw] md:p-[1.7vw] border-b border-darker hover:bg-darker cursor-pointer duration-300">
+          class="group flex items-center justify-between p-[3vw] md:p-[1.7vw] border-b border-darker hover:bg-darker duration-300 fade">
           <p class="text-[5vw] md:text-[3.5vw] font-regular text-lighter group-hover:text-light duration-300">
             Brand Design
           </p>
@@ -237,7 +238,7 @@
           </div>
         </div>
         <div
-          class="group flex items-center justify-between p-[3vw] md:p-[1.7vw] border-b border-darker hover:bg-darker cursor-pointer duration-300">
+          class="group flex items-center justify-between p-[3vw] md:p-[1.7vw] border-b border-darker hover:bg-darker duration-300 fade">
           <p class="text-[5vw] md:text-[3.5vw] font-regular text-lighter group-hover:text-light duration-300">
             Graphic Design
           </p>
@@ -256,9 +257,9 @@
 
   <section class="bg-darkest" id="about-us">
     <div class="container">
-      <div class="bg-darker py-[10vw] px-[5vw]">
+      <div class="bg-darker py-[10vw] px-[5vw] fade">
         <p
-          class="text-[6vw] md:text-[4.4vw] text-light font-regular leading-tight -word-tight -tracking-wider uppercase">
+          class="text-[6vw] md:text-[4.4vw] text-light font-regular leading-tight -word-tight -tracking-wider uppercase fade">
           the team <img class="inline-block h-[5vw]" src="./assets/img/inline-1.png"> of creative minds knows
           <img class="inline-block h-[5vw]" src="./assets/img/inline-2.png">
           how to to
@@ -269,17 +270,157 @@
     </div>
   </section>
 
-  <section class="bg-darkest py-16" id="best-project">
+  <section class="bg-darkest py-16" id="our-team">
+    <div class="container">
+      <h2 class="text-[10vw] md:text-[5vw] font-bold text-light leading-none tracking-tighter mb-[3vw] uppercase fade">
+        our
+        amazing team
+        <span class="inline-block w-[3vw] md:w-[1.5vw] h-[3vw] md:h-[1.5vw] bg-yellow rounded-full"></span>
+      </h2>
+      <div class="group">
+        <div
+          class="flex items-center justify-between p-[1vw] group-hover:bg-yellow border-y border-lighter cursor-pointer duration-300 rounded-[40px]">
+          <p class="text-[2vw] text-yellow group-hover:text-dark font-bold uppercase duration-300">jumabek</p>
+          <div
+            class="group relative rounded-[40px] w-[30vw] h-[5vw] group-hover:h-[30vw] bg-[url('../img/jumabekaka.png')] bg-no-repeat bg-[30%_30%] grayscale group-hover:grayscale-0 group-hover:bg-center bg-cover overflow-hidden duration-500">
+            <div
+              class="absolute bottom-0 left-0 flex items-end justify-center w-full h-1/3 pb-[1vw] bg-gradient-to-t from-dark/50">
+              <div class="flex gap-[2vw] translate-y-[5vw] group-hover:translate-y-0 duration-300 delay-500">
+                <a target="_blank" href="https://github.com/Jumabek" class="w-[2vw] h-[2vw]">
+                  <img src="./assets/img/github.png" alt="">
+                </a>
+                <a target="_blank" href="mailto:jumabek@humblebee.ai" class="w-[2vw] h-[2vw]">
+                  <img src="./assets/img/mail.png" alt="">
+                </a>
+                <a target="_blank" href="https://www.linkedin.com/in/jumabek-alikhanov-1036a864"
+                  class="w-[2vw] h-[2vw]">
+                  <img src="./assets/img/linkedin.png" alt="">
+                </a>
+              </div>
+            </div>
+          </div>
+          <p class="text-[1vw] text-yellow group-hover:text-dark font-regular uppercase duration-300">CEO</p>
+        </div>
+      </div>
+      <div class="group">
+        <div
+          class="flex items-center justify-between p-[1vw] group-hover:bg-yellow border-y border-lighter cursor-pointer duration-300 rounded-[40px]">
+          <p class="text-[2vw] text-yellow group-hover:text-dark font-bold uppercase duration-300">jakhongir</p>
+          <div
+            class="group relative rounded-[40px] w-[30vw] h-[5vw] group-hover:h-[30vw] bg-[url('../img/jahongiraka.png')] bg-no-repeat bg-[30%_30%] grayscale group-hover:grayscale-0 group-hover:bg-center bg-cover overflow-hidden duration-500">
+            <div
+              class="absolute bottom-0 left-0 flex items-end justify-center w-full h-1/3 pb-[1vw] bg-gradient-to-t from-dark/50">
+              <div class="flex gap-[2vw] translate-y-[5vw] group-hover:translate-y-0 duration-300 delay-500">
+                <a target="_blank" href="https://github.com/Ajakhongir" class="w-[2vw] h-[2vw]">
+                  <img src="./assets/img/github.png" alt="">
+                </a>
+                <a target="_blank" href="mailto:jahongir@humblebee.ai" class="w-[2vw] h-[2vw]">
+                  <img src="./assets/img/mail.png" alt="">
+                </a>
+                <a target="_blank" href="https://www.linkedin.com/in/jakhongir-alikhanov-b6b77820b/"
+                  class="w-[2vw] h-[2vw]">
+                  <img src="./assets/img/linkedin.png" alt="">
+                </a>
+              </div>
+            </div>
+          </div>
+          <p class="text-[1vw] text-yellow group-hover:text-dark font-regular uppercase duration-300">CTO & Co-Founder |
+            NLP TechLead</p>
+        </div>
+      </div>
+      <div class="group">
+        <div
+          class="flex items-center justify-between p-[1vw] group-hover:bg-yellow border-y border-lighter cursor-pointer duration-300 rounded-[40px]">
+          <p class="text-[2vw] text-yellow group-hover:text-dark font-bold uppercase duration-300">bobur</p>
+          <div
+            class="group relative rounded-[40px] w-[30vw] h-[5vw] group-hover:h-[30vw] bg-[url('../img/boburaka.png')] bg-no-repeat bg-[30%_30%] grayscale group-hover:grayscale-0 group-hover:bg-center bg-cover overflow-hidden duration-500">
+            <div
+              class="absolute bottom-0 left-0 flex items-end justify-center w-full h-1/3 pb-[1vw] bg-gradient-to-t from-dark/50">
+              <div class="flex gap-[2vw] translate-y-[5vw] group-hover:translate-y-0 duration-300 delay-500">
+                <a target="_blank" href="https://github.com/shbobur" class="w-[2vw] h-[2vw]">
+                  <img src="./assets/img/github.png" alt="">
+                </a>
+                <a target="_blank" href="mailto:bobur@humblebee.ai" class="w-[2vw] h-[2vw]">
+                  <img src="./assets/img/mail.png" alt="">
+                </a>
+                <a target="_blank" href="https://www.linkedin.com/in/shbobur" class="w-[2vw] h-[2vw]">
+                  <img src="./assets/img/linkedin.png" alt="">
+                </a>
+              </div>
+            </div>
+          </div>
+          <p class="text-[1vw] text-yellow group-hover:text-dark font-regular uppercase duration-300">Computer Vision
+            TechLead</p>
+        </div>
+      </div>
+      <div class="group">
+        <div
+          class="flex items-center justify-between p-[1vw] group-hover:bg-yellow border-y border-lighter cursor-pointer duration-300 rounded-[40px]">
+          <p class="text-[2vw] text-yellow group-hover:text-dark font-bold uppercase duration-300">Muhriddin</p>
+          <div
+            class="group relative rounded-[40px] w-[30vw] h-[5vw] group-hover:h-[30vw] bg-[url('../img/imudin.png')] bg-no-repeat bg-[30%_30%] grayscale group-hover:grayscale-0 group-hover:bg-center bg-cover overflow-hidden duration-500">
+            <div
+              class="absolute bottom-0 left-0 flex items-end justify-center w-full h-1/3 pb-[1vw] bg-gradient-to-t from-dark/50">
+              <div class="flex gap-[2vw] translate-y-[5vw] group-hover:translate-y-0 duration-300 delay-500">
+                <a target="_blank" href="https://github.com/mudin" class="w-[2vw] h-[2vw]">
+                  <img src="./assets/img/github.png" alt="">
+                </a>
+                <a target="_blank" href="mailto:mudin@humblebee.ai" class="w-[2vw] h-[2vw]">
+                  <img src="./assets/img/mail.png" alt="">
+                </a>
+                <a target="_blank" href="https://www.linkedin.com/in/mudin/" class="w-[2vw] h-[2vw]">
+                  <img src="./assets/img/linkedin.png" alt="">
+                </a>
+              </div>
+            </div>
+          </div>
+          <p class="text-[1vw] text-yellow group-hover:text-dark font-regular uppercase duration-300">TechLead for AI
+            for
+            Mobile Platforms</p>
+        </div>
+      </div>
+      <div class="group">
+        <div
+          class="flex items-center justify-between p-[1vw] group-hover:bg-yellow border-y border-lighter cursor-pointer duration-300 rounded-[40px]">
+          <p class="text-[2vw] text-yellow group-hover:text-dark font-bold uppercase duration-300">jasurbek</p>
+          <div
+            class="group relative rounded-[40px] w-[30vw] h-[5vw] group-hover:h-[30vw] bg-[url('../img/jasurbekaka.png')] bg-no-repeat bg-[30%_30%] grayscale group-hover:grayscale-0 group-hover:bg-center bg-cover overflow-hidden duration-500">
+            <div
+              class="absolute bottom-0 left-0 flex items-end justify-center w-full h-1/3 pb-[1vw] bg-gradient-to-t from-dark/50">
+              <div class="flex gap-[2vw] translate-y-[5vw] group-hover:translate-y-0 duration-300 delay-500">
+                <a target="_blank" href="https://github.com/jasuriy" class="w-[2vw] h-[2vw]">
+                  <img src="./assets/img/github.png" alt="">
+                </a>
+                <a target="_blank" href="mailto:jasurbek@humblebee.ai" class="w-[2vw] h-[2vw]">
+                  <img src="./assets/img/mail.png" alt="">
+                </a>
+                <a target="_blank" href="https://www.linkedin.com/in/jasurbek-gopirjonov-b7baa3156"
+                  class="w-[2vw] h-[2vw]">
+                  <img src="./assets/img/linkedin.png" alt="">
+                </a>
+              </div>
+            </div>
+          </div>
+          <p class="text-[1vw] text-yellow group-hover:text-dark font-regular uppercase duration-300">System
+            administrator
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- <section class="bg-darkest py-16" id="best-project">
     <div class="container">
       <div class="flex flex-col md:flex-row justify-between">
         <h2
-          class="w-full md:w-[60%] text-[10vw] md:text-[5vw] font-bold text-light leading-none tracking-tighter uppercase">
+          class="w-full md:w-[60%] text-[10vw] md:text-[5vw] font-bold text-light leading-none tracking-tighter uppercase fade">
           best
           project
           <span class="inline-block w-[1.5vw] h-[1.5vw] bg-yellow rounded-full"></span>
         </h2>
         <p
-          class="w-full md:w-[40%] text-[3vw] md:text-[1.2vw] font-light text-lighter leading-tighter md:leading-loose my-[5vw] md:mt-[0.5vw] md:mb-0">
+          class="w-full md:w-[40%] text-[3vw] md:text-[1.2vw] font-light text-lighter leading-tighter md:leading-loose my-[5vw] md:mt-[0.5vw] md:mb-0 fade">
           Creative
           fuels design, design
           fuels
@@ -287,44 +428,44 @@
       </div>
       <div class="flex flex-wrap gap-[3vw] md:gap-[1.3vw] mt-[1vw] mb-[1vw] md:mb-0">
         <div
-          class="group button text-lighter hover:text-light p-[2vw] md:py-[0.4vw] md:px-[1vw] border-lighter hover:border-light duration-300 cursor-pointer">
+          class="group button text-lighter hover:text-light p-[2vw] md:py-[0.4vw] md:px-[1vw] border-lighter hover:border-light duration-300 fade">
           <img class="w-[5vw] md:w-[2.3vw] opacity-50 group-hover:opacity-100 duration-300"
             src="./assets/img/globus-white.png" alt="globus">
           <p class="text-[3vw] md:text-[1.2vw]">AI</p>
         </div>
         <div
-          class="group button text-lighter hover:text-light p-[2vw] md:py-[0.4vw] md:px-[1vw] border-lighter hover:border-light duration-300 cursor-pointer">
+          class="group button text-lighter hover:text-light p-[2vw] md:py-[0.4vw] md:px-[1vw] border-lighter hover:border-light duration-300 fade">
           <img class="w-[5vw] md:w-[2.3vw] opacity-50 group-hover:opacity-100 duration-300"
             src="./assets/img/globus-white.png" alt="globus">
           <p class="text-[3vw] md:text-[1.2vw]">Machine Learning</p>
         </div>
         <div
-          class="group button text-lighter hover:text-light p-[2vw] md:py-[0.4vw] md:px-[1vw] border-lighter hover:border-light duration-300 cursor-pointer">
+          class="group button text-lighter hover:text-light p-[2vw] md:py-[0.4vw] md:px-[1vw] border-lighter hover:border-light duration-300 fade">
           <img class="w-[5vw] md:w-[2.3vw] opacity-50 group-hover:opacity-100 duration-300"
             src="./assets/img/globus-white.png" alt="globus">
           <p class="text-[3vw] md:text-[1.2vw]">Computer Vision</p>
         </div>
         <div
-          class="group button text-lighter hover:text-light p-[2vw] md:py-[0.4vw] md:px-[1vw] border-lighter hover:border-light duration-300 cursor-pointer">
+          class="group button text-lighter hover:text-light p-[2vw] md:py-[0.4vw] md:px-[1vw] border-lighter hover:border-light duration-300 fade">
           <img class="w-[5vw] md:w-[2.3vw] opacity-50 group-hover:opacity-100 duration-300"
             src="./assets/img/globus-white.png" alt="globus">
           <p class="text-[3vw] md:text-[1.2vw]">NLP</p>
         </div>
       </div>
       <div class="grid grid-cols-2 md:grid-cols-3 gap-[5vw] md:gap-[2vw] mt-[4vw]">
-        <div class="col-span-2 md:col-span-1">
+        <div class="col-span-2 md:col-span-1 fade">
           <img src="./assets/img/grid-1.png" alt="">
         </div>
-        <div class="col-span-2">
+        <div class="col-span-2 fade">
           <img src="./assets/img/grid-4.png" alt="">
         </div>
-        <div class="col-span-2 md:col-span-1">
+        <div class="col-span-2 md:col-span-1 fade">
           <img src="./assets/img/grid-2.png" alt="">
         </div>
-        <div class="col-span-2 md:col-span-1">
+        <div class="col-span-2 md:col-span-1 fade">
           <img src="./assets/img/grid-3.png" alt="">
         </div>
-        <div class="col-span-2 md:col-span-1 group relative rounded-br-[80px] overflow-hidden cursor-pointer">
+        <div class="col-span-2 md:col-span-1 group relative rounded-br-[80px] overflow-hidden fade">
           <img class="h-full w-auto" src="./assets/img/abstract-light.jpg" alt="">
           <div class="absolute left-[2vw] bottom-[1vw] z-20">
             <p class="text-light text-[1.3vw] font-regular uppercase mb-[1vw]">2022</p>
@@ -344,23 +485,24 @@
         </div>
       </div>
     </div>
-  </section>
+  </section> -->
 
   <footer class="bg-darkest pb-8">
     <div class="container">
-      <div class="bg-yellow rounded-bl-[30px] rounded-br-[30px] md:rounded-br-[80px] md:rounded-bl-[80px] p-[5vw]">
+      <div class="bg-yellow rounded-bl-[30px] rounded-br-[30px] md:rounded-br-[80px] md:rounded-bl-[80px] p-[5vw] fade">
         <div class="flex items-center justify-between">
-          <div class="relative h-[1px] w-[35%] bg-[#badd38] header-line">
+          <div class="relative h-[1px] w-[35%] bg-[#badd38] header-line fade">
           </div>
-          <div class="w-[20%] flex items-center justify-center py-[2vw] gap-8">
+          <div class="w-[20%] flex items-center justify-center py-[2vw] gap-8 fade">
             <img class="w-[2.5vw]" src="./assets/img/star-2.png" alt="star">
             <img class="w-[2.5vw]" src="./assets/img/star-2.png" alt="star">
             <img class="w-[2.5vw]" src="./assets/img/star-2.png" alt="star">
           </div>
-          <div class="relative h-[1px] w-[35%] bg-[#badd38] header-line">
+          <div class="relative h-[1px] w-[35%] bg-[#badd38] header-line fade">
           </div>
         </div>
-        <h2 class="text-[8vw] md:text-[5vw] font-bold tracking-[-0.1rem] text-center leading-tight uppercase mt-[2vw]">
+        <h2
+          class="text-[8vw] md:text-[5vw] font-bold tracking-[-0.1rem] text-center leading-tight uppercase mt-[2vw] fade">
           let's discuss
           <br>your
           ideas
@@ -368,17 +510,17 @@
         <div
           class="flex flex-col md:flex-row items-center justify-center gap-[3vw] md:gap-[1.5vw] mb-[5vw] md:mb-0 mt-[3vw]">
           <div
-            class="button w-full md:w-auto uppercase border border-dark bg-dark hover:bg-yellow text-yellow hover:text-dark">
+            class="button w-full md:w-auto uppercase border border-dark bg-dark hover:bg-yellow text-yellow hover:text-dark fade">
             <p class="p-[3vw] md:p-[1vw] text-[5vw] md:text-[1.5vw]">Talks now</p>
           </div>
           <div
-            class="button w-full md:w-auto uppercase border border-dark bg-dark hover:bg-yellow text-yellow hover:text-dark">
+            class="button w-full md:w-auto uppercase border border-dark bg-dark hover:bg-yellow text-yellow hover:text-dark fade">
             <p class="p-[3vw] md:p-[1vw] text-[5vw] md:text-[1.5vw]">Follow us</p>
           </div>
         </div>
       </div>
       <div class="mt-[7.5vw]">
-        <h3 class="text-[5vw] md:text-[3vw] text-yellow font-regular text-left md:text-center">HumbleBee AI</h3>
+        <h3 class="text-[5vw] md:text-[3vw] text-yellow font-regular text-left md:text-center fade">HumbleBee AI</h3>
         <div class="flex items-center justify-between mt-[6vw]">
           <a href="#" class="text-[3vw] md:text-[1.2vw] text-yellow font-light uppercase tracking-tight">terms &
             agreements</a>
