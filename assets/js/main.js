@@ -1,6 +1,7 @@
 
-gsap.registerPlugin(ScrollTrigger)
-
+function registerScrollTrigger() {
+    gsap.registerPlugin(ScrollTrigger)
+}
 // mobile menu
 let menuBtn = document.querySelector('.menu-btn')
 let menuList = document.querySelector('.menu-list')
@@ -114,6 +115,7 @@ function animations() {
 }
 
 window.onload = () => {
+    registerScrollTrigger
     animations()
     toggleCursor()
 }
