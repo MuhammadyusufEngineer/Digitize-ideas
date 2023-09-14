@@ -115,7 +115,7 @@ function animations() {
 }
 
 window.onload = () => {
-    registerScrollTrigger
+    registerScrollTrigger()
     animations()
     toggleCursor()
 }
