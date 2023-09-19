@@ -50,7 +50,7 @@
     left: 0;
     background-color: #000;
     transform-origin: bottom right;
-    transition: transform 0.25s ease-out;
+    transition: transform 0.5s ease-out;
 }
 
 .underline-animation:hover:after {
@@ -71,6 +71,22 @@
 .nav-link .letter {
     display: inline-block;
     transition: transform 0.6s cubic-bezier(0.76, 0, 0.024, 1);
+}
+
+
+.hover-image {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 450px;
+    height: auto;
+    z-index: -1;
+    aspect-ratio: 0.9;
+    transform-origin: center;
+    transform: translate(-50%, -50%);
+    background: gray;
+    object-fit: cover;
+    pointer-events: none;
 }
 
 .button {
