@@ -21,13 +21,28 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    /* cursor: none; */
     user-select: none;
 }
 
-::-webkit-scrollbar {
-    display: none;
+body,
+a,
+button {
+    cursor: none;
 }
+
+::-webkit-scrollbar-track {
+    cursor: col-resize;
+}
+
+::-webkit-scrollbar {
+    background: #171717;
+    width: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #d5ff3f;
+}
+
 
 .container {
     width: 90%;
@@ -149,4 +164,26 @@
         transition: all 3s;
     }
 
+}
+
+.project-item {
+    --spacing: 4rem;
+    height: calc(100vh - var(--spacing) * 4);
+    top: var(--spacing);
+    z-index: 4;
+}
+
+.project-item:nth-child(2) {
+    top: calc(var(--spacing) * 2);
+    z-index: 3;
+}
+
+.project-item:nth-child(3) {
+    top: calc(var(--spacing) * 3);
+    z-index: 2;
+}
+
+.project-item:nth-child(4) {
+    top: calc(var(--spacing) * 4);
+    z-index: 1;
 }

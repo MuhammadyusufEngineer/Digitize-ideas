@@ -135,15 +135,52 @@ window.onload = () => {
     toggleCursor()
 }
 
+
 // // // CURSOR FOLLOWER
 let cursor = document.querySelector('.cursor')
+let bee = document.querySelector('.bee')
+let height = cursor.offsetHeight
+let width = cursor.offsetWidth
+let previousPageX = 0;
+
+let footer3D = document.querySelector('#footer-3d')
+
 document.onmousemove = (e) => {
-    cursor.style.translate = `${e.pageX + 10}px ${e.pageY + 10}px`
-    // cursor.style.top = `${e.pageY + 10}px`
-    // cursor.style.left = `${e.pageX + 10}px`
+    let currentPageX = e.pageX - width / 2
+    currentPageX > previousPageX ? bee.style.cssText = 'transform: rotateY(0deg) translateX(-100%);' : bee.style.cssText = 'transform: rotateY(180deg) translateX(0%);'
+    cursor.style.translate = `${e.pageX - width / 2}px ${e.pageY - height / 2}px`
+    bee.style.translate = `${e.pageX - width / 2}px ${e.pageY - height / 2}px`
+    previousPageX = currentPageX
+}
+
+footer3D.onmouseenter = () => {
+    cursor.classList.remove('w-[1vw]', 'h-[1vw]')
+    cursor.classList.add('w-[4vw]', 'h-[4vw]')
+    cursor.querySelector('p').classList.replace('scale-0', 'scale-100')
+    cursor.querySelector('p').style.transition = '0.3s'
+}
+footer3D.onmouseleave = () => {
+    cursor.classList.remove('w-[4vw]', 'h-[4vw]')
+    cursor.classList.add('w-[1vw]', 'h-[1vw]')
+    cursor.querySelector('p').classList.replace('scale-100', 'scale-0')
+    cursor.querySelector('p').style.transition = 'inherit'
+
 }
 
 function toggleCursor() {
+    gsap.set('.project-item', { position: 'absolute' })
+    gsap.to('.project-item', {
+        yPercent: -100,
+        stagger: 0.5,
+        scrollTrigger: {
+            trigger: '.projects-wrapper',
+            markers: true,
+            scrub: true,
+            pin: true,
+            start: 'top top',
+            end: '+=3000px'
+        }
+    })
     if (window.innerWidth < 768) {
         cursor.classList.add('hidden')
         gsap.from('.btns, .mobile-btn', 2, {
@@ -276,7 +313,7 @@ fadeElements.forEach(elem => {
 //     item.style.transitionDelay = `${speed}ms`;
 // });
 
-setTimeout(() => {
+document.addEventListener('DOMContentLoaded', () => {
     class HoverImage {
         constructor(element, options) {
             this.el = element;
@@ -455,4 +492,4 @@ setTimeout(() => {
     for (const item of document.querySelectorAll("[data-hover-img]")) {
         new HoverImage(item);
     }
-}, 3000)
+})
