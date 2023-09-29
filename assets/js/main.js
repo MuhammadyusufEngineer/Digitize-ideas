@@ -1,14 +1,14 @@
 // Preload images
-const preloadImages = () => {
-    return new Promise((resolve, reject) => {
-        imagesLoaded(document.querySelectorAll('img'), resolve);
-    });
-};
-// And then..
-preloadImages().then(() => {
-    // Remove the loader
-    document.body.classList.remove('loading');
-});
+// const preloadImages = () => {
+//     return new Promise((resolve, reject) => {
+//         imagesLoaded(document.querySelectorAll('img'), resolve);
+//     });
+// };
+// // And then..
+// preloadImages().then(() => {
+//     // Remove the loader
+//     document.body.classList.remove('loading');
+// });
 
 function registerScrollTrigger() {
     gsap.registerPlugin(ScrollTrigger)
