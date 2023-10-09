@@ -168,7 +168,7 @@ button {
 
 .project-item {
     --spacing: 4rem;
-    height: calc(100vh - var(--spacing) * 4);
+    height: 70vh;
     top: var(--spacing);
     z-index: 4;
 }
