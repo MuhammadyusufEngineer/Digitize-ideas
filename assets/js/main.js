@@ -138,49 +138,68 @@ window.onload = () => {
 
 // // // CURSOR FOLLOWER
 let cursor = document.querySelector('.cursor')
-let bee = document.querySelector('.bee')
+// let bee = document.querySelector('.bee')
 let height = cursor.offsetHeight
 let width = cursor.offsetWidth
-let previousPageX = 0;
+// let previousPageX = 0;
 
 let footer3D = document.querySelector('#footer-3d')
 
 document.onmousemove = (e) => {
     let currentPageX = e.pageX - width / 2
-    currentPageX > previousPageX ? bee.style.cssText = 'transform: rotateY(0deg) translateX(-100%);' : bee.style.cssText = 'transform: rotateY(180deg) translateX(0%);'
+    // currentPageX > previousPageX ? bee.style.cssText = 'transform: rotateY(0deg) translateX(-100%);' : bee.style.cssText = 'transform: rotateY(180deg) translateX(0%);'
     cursor.style.translate = `${e.pageX - width / 2}px ${e.pageY - height / 2}px`
-    bee.style.translate = `${e.pageX - width / 2}px ${e.pageY - height / 2}px`
-    previousPageX = currentPageX
+    // bee.style.translate = `${e.pageX - width / 2}px ${e.pageY - height / 2}px`
+    // previousPageX = currentPageX
+}
+
+function mouseEntr(text) {
+    let p = cursor.querySelector('p')
+    cursor.classList.remove('w-[1vw]', 'h-[1vw]')
+    cursor.classList.add('w-[4vw]', 'h-[4vw]')
+    p.innerHTML = text
+    p.classList.replace('scale-0', 'scale-100')
+}
+
+function mouseLeave() {
+    let p = cursor.querySelector('p')
+    cursor.classList.remove('w-[4vw]', 'h-[4vw]')
+    cursor.classList.add('w-[1vw]', 'h-[1vw]')
+    p.classList.replace('scale-100', 'scale-0')
 }
 
 footer3D.onmouseenter = () => {
-    cursor.classList.remove('w-[1vw]', 'h-[1vw]')
-    cursor.classList.add('w-[4vw]', 'h-[4vw]')
-    cursor.querySelector('p').classList.replace('scale-0', 'scale-100')
-    cursor.querySelector('p').style.transition = '0.3s'
+    mouseEntr('drag')
 }
-footer3D.onmouseleave = () => {
-    cursor.classList.remove('w-[4vw]', 'h-[4vw]')
-    cursor.classList.add('w-[1vw]', 'h-[1vw]')
-    cursor.querySelector('p').classList.replace('scale-100', 'scale-0')
-    cursor.querySelector('p').style.transition = 'inherit'
 
+footer3D.onmouseleave = () => {
+    mouseLeave()
 }
+
+const projectItems = document.querySelectorAll('.project-item')
+projectItems.forEach(item => {
+    item.onmouseenter = () => {
+        mouseEntr('view')
+    }
+    item.onmouseleave = () => {
+        mouseLeave()
+    }
+    item.onclick = () => {
+        item.classList.remove('relative')
+        item.classList.add('absolute', 'top-0', 'left-0', 'w-full', 'h-full')
+    }
+    item.ondblclick = () => {
+        item.classList.remove('absolute', 'top-0', 'left-0', 'w-full', 'h-full')
+        item.classList.add('relative')
+    }
+
+})
+
+
+
 
 function toggleCursor() {
-    gsap.set('.project-item', { position: 'absolute' })
-    gsap.to('.project-item', {
-        yPercent: -100,
-        stagger: 0.5,
-        scrollTrigger: {
-            trigger: '.projects-wrapper',
-            markers: true,
-            scrub: true,
-            pin: true,
-            start: 'top top',
-            end: '+=3000px'
-        }
-    })
+
     if (window.innerWidth < 768) {
         cursor.classList.add('hidden')
         gsap.from('.btns, .mobile-btn', 2, {

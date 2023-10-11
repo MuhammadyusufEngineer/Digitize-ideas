@@ -13,11 +13,11 @@
 
   <div
     class="flex items-center justify-center mix-blend-difference cursor pointer-events-none absolute top-0 left-0 w-[1vw] h-[1vw] bg-yellow rounded-full duration-100 select-none z-[999]">
-    <p class="text-[1vw] text-dark font-regular scale-0">DRAG</p>
+    <p class="text-[1vw] text-dark font-regular scale-0 uppercase duration-100"></p>
   </div>
-  <img
+  <!-- <img
     class="bee pointer-events-none absolute top-0 left-0 w-[5vw] h-[5vw] duration-300 select-none z-[999] ease-linear"
-    style="transform: rotateY(180deg)" src="./assets/img/bee-2.gif" alt="">
+    style="transform: rotateY(180deg)" src="./assets/img/bee-2.gif" alt=""> -->
 
   <div class="hidden">
     <img src="./assets/img/hidden-image-1.jpg" alt="">
@@ -41,7 +41,7 @@
                 Us</a>
             </li>
             <li class="nav-item underline-animation overflow-hidden">
-              <a name="anchor" href="#"
+              <a name="anchor" href="#projects-wrapper"
                 class="nav-link inline-block text-inherit leading-[120%] h-[1.4vw] font-light overflow-hidden">Project</a>
             </li>
             <li class="nav-item underline-animation  overflow-hidden">
@@ -314,97 +314,101 @@
           <p class="text-[3vw] md:text-[1.2vw]">NLP</p>
         </div>
       </div> -->
-      <div class="projects-wrapper relative flex flex-col gap-[5vw] mt-[5vw]">
-        <div class="project-item w-full p-[0.5vw] bg-darkest rounded-xl border border-lighter">
-          <div class="flex items-center gap-[1vw] w-full mb-[0.5vw] pl-[0.5vw]">
+      <div class="projects-wrapper relative grid grid-cols-2 grid-rows-2 gap-[1vw] mt-[5vw]" id="projects-wrapper">
+        <div
+          class="relative project-item w-full p-[0.5vw] bg-darkest rounded-xl border border-lighter overflow-hidden duration-300">
+          <div class="relative flex items-center gap-[1vw] w-full mb-[1vw] px-[0.5vw]">
             <div class="flex items-center gap-[5px]">
               <div class="w-[0.7vw] h-[0.7vw] bg-[#e8524a] rounded-full"></div>
               <div class="w-[0.7vw] h-[0.7vw] bg-[#f0ad1b] rounded-full"></div>
               <div class="w-[0.7vw] h-[0.7vw] bg-[#59c737] rounded-full"></div>
             </div>
-            <div>
-              <div class="flex items-center gap-[0.5vw]">
-                <div class="w-[2vw]">
-                  <img src="./assets/img/arrow-up-dark.png" alt="">
-                </div>
-                <div class="w-[2vw]">
-                  <img src="./assets/img/arrow-up-dark.png" alt="">
-                </div>
-              </div>
+            <div class="w-1/2 h-[1vw] bg-darker rounded-lg absolute top-0 left-1/2 -translate-x-1/2">
+              <p class="text-center text-[0.7vw] text-white font-light">humblee-ai.com</p>
             </div>
-            <div class="w-full h-[1vw] bg-darker rounded-lg"></div>
           </div>
-          <div
-            class="rounded-xl bg-[url('../img/hidden-image-1.jpg')] bg-cover bg-center bg-no-repeat w-full h-[65.5vh]">
+          <div class="w-full h-[70%] overflow-hidden rounded-xl">
+            <img src="./assets/img/hidden-image-1.jpg" class="h-full" alt="project item">
+          </div>
+          <div class="p-[1vw] bg-darkest">
+            <h3 class="text-[1vw] font-regular text-white">Empty basket detector AI</h3>
+            <p class="text-[0.7vw] font-light text-white/50 mt-[0.5vw]">Lorem ipsum dolor sit amet consectetur
+              adipisicing
+              elit.
+              Odio ea aspernatur perspiciatis natus. Enim accusamus veniam quisquam eius explicabo natus! Numquam
+              incidunt distinctio voluptatem cumque porro neque. Accusamus, incidunt rem?</p>
           </div>
         </div>
-        <div class="project-item w-full p-[0.5vw] bg-darkest rounded-xl border border-lighter">
-          <div class="flex items-center gap-[1vw] w-full mb-[0.5vw] pl-[0.5vw]">
+        <div
+          class="relative project-item w-full p-[0.5vw] bg-darkest rounded-xl border border-lighter overflow-hidden duration-300">
+          <div class="relative flex items-center gap-[1vw] w-full mb-[1vw] px-[0.5vw]">
             <div class="flex items-center gap-[5px]">
               <div class="w-[0.7vw] h-[0.7vw] bg-[#e8524a] rounded-full"></div>
               <div class="w-[0.7vw] h-[0.7vw] bg-[#f0ad1b] rounded-full"></div>
               <div class="w-[0.7vw] h-[0.7vw] bg-[#59c737] rounded-full"></div>
             </div>
-            <div>
-              <div class="flex items-center gap-[0.5vw]">
-                <div class="w-[2vw]">
-                  <img src="./assets/img/arrow-up-dark.png" alt="">
-                </div>
-                <div class="w-[2vw]">
-                  <img src="./assets/img/arrow-up-dark.png" alt="">
-                </div>
-              </div>
+            <div class="w-1/2 h-[1vw] bg-darker rounded-lg absolute top-0 left-1/2 -translate-x-1/2">
+              <p class="text-center text-[0.7vw] text-white font-light">humblee-ai.com</p>
             </div>
-            <div class="w-full h-[1vw] bg-darker rounded-lg"></div>
           </div>
-          <div
-            class="rounded-xl bg-[url('../img/hidden-image-2.png')] bg-cover bg-center bg-no-repeat w-full h-[65.5vh]">
+          <div class="w-full h-[70%] overflow-hidden rounded-xl">
+            <img src="./assets/img/hidden-image-2.jpg" class="w-full" alt="project item">
+          </div>
+          <div class="p-[1vw] bg-darkest">
+            <h3 class="text-[1vw] font-regular text-white">Empty basket detector AI</h3>
+            <p class="text-[0.7vw] font-light text-white/50 mt-[0.5vw]">Lorem ipsum dolor sit amet consectetur
+              adipisicing
+              elit.
+              Odio ea aspernatur perspiciatis natus. Enim accusamus veniam quisquam eius explicabo natus! Numquam
+              incidunt distinctio voluptatem cumque porro neque. Accusamus, incidunt rem?</p>
           </div>
         </div>
-        <div class="project-item w-full p-[0.5vw] bg-darkest rounded-xl border border-lighter">
-          <div class="flex items-center gap-[1vw] w-full mb-[0.5vw] pl-[0.5vw]">
+        <div
+          class="relative project-item w-full p-[0.5vw] bg-darkest rounded-xl border border-lighter overflow-hidden duration-300">
+          <div class="relative flex items-center gap-[1vw] w-full mb-[1vw] px-[0.5vw]">
             <div class="flex items-center gap-[5px]">
               <div class="w-[0.7vw] h-[0.7vw] bg-[#e8524a] rounded-full"></div>
               <div class="w-[0.7vw] h-[0.7vw] bg-[#f0ad1b] rounded-full"></div>
               <div class="w-[0.7vw] h-[0.7vw] bg-[#59c737] rounded-full"></div>
             </div>
-            <div>
-              <div class="flex items-center gap-[0.5vw]">
-                <div class="w-[2vw]">
-                  <img src="./assets/img/arrow-up-dark.png" alt="">
-                </div>
-                <div class="w-[2vw]">
-                  <img src="./assets/img/arrow-up-dark.png" alt="">
-                </div>
-              </div>
+            <div class="w-1/2 h-[1vw] bg-darker rounded-lg absolute top-0 left-1/2 -translate-x-1/2">
+              <p class="text-center text-[0.7vw] text-white font-light">humblee-ai.com</p>
             </div>
-            <div class="w-full h-[1vw] bg-darker rounded-lg"></div>
           </div>
-          <div
-            class="rounded-xl bg-[url('../img/hidden-image-3.jpg')] bg-cover bg-center bg-no-repeat w-full h-[65.5vh]">
+          <div class="w-full h-[70%] overflow-hidden rounded-xl">
+            <img src="./assets/img/hidden-image-3.jpg" class="w-full" alt="project item">
+          </div>
+          <div class="p-[1vw] bg-darkest">
+            <h3 class="text-[1vw] font-regular text-white">Empty basket detector AI</h3>
+            <p class="text-[0.7vw] font-light text-white/50 mt-[0.5vw]">Lorem ipsum dolor sit amet consectetur
+              adipisicing
+              elit.
+              Odio ea aspernatur perspiciatis natus. Enim accusamus veniam quisquam eius explicabo natus! Numquam
+              incidunt distinctio voluptatem cumque porro neque. Accusamus, incidunt rem?</p>
           </div>
         </div>
-        <div class="project-item w-full p-[0.5vw] bg-darkest rounded-xl border border-lighter">
-          <div class="flex items-center gap-[1vw] w-full mb-[0.5vw] pl-[0.5vw]">
+        <div
+          class="relative project-item w-full p-[0.5vw] bg-darkest rounded-xl border border-lighter overflow-hidden duration-300">
+          <div class="relative flex items-center gap-[1vw] w-full mb-[1vw] px-[0.5vw]">
             <div class="flex items-center gap-[5px]">
               <div class="w-[0.7vw] h-[0.7vw] bg-[#e8524a] rounded-full"></div>
               <div class="w-[0.7vw] h-[0.7vw] bg-[#f0ad1b] rounded-full"></div>
               <div class="w-[0.7vw] h-[0.7vw] bg-[#59c737] rounded-full"></div>
             </div>
-            <div>
-              <div class="flex items-center gap-[0.5vw]">
-                <div class="w-[2vw]">
-                  <img src="./assets/img/arrow-up-dark.png" alt="">
-                </div>
-                <div class="w-[2vw]">
-                  <img src="./assets/img/arrow-up-dark.png" alt="">
-                </div>
-              </div>
+            <div class="w-1/2 h-[1vw] bg-darker rounded-lg absolute top-0 left-1/2 -translate-x-1/2">
+              <p class="text-center text-[0.7vw] text-white font-light">humblee-ai.com</p>
             </div>
-            <div class="w-full h-[1vw] bg-darker rounded-lg"></div>
           </div>
-          <div
-            class="rounded-xl bg-[url('../img/hidden-image-4.webp')] bg-cover bg-center bg-no-repeat w-full h-[65.5vh]">
+          <div class="w-full h-[70%] overflow-hidden rounded-xl">
+            <img src="./assets/img/hidden-image-4.webp" class="w-full" alt="project item">
+          </div>
+          <div class="p-[1vw] bg-darkest">
+            <h3 class="text-[1vw] font-regular text-white">Empty basket detector AI</h3>
+            <p class="text-[0.7vw] font-light text-white/50 mt-[0.5vw]">Lorem ipsum dolor sit amet consectetur
+              adipisicing
+              elit.
+              Odio ea aspernatur perspiciatis natus. Enim accusamus veniam quisquam eius explicabo natus! Numquam
+              incidunt distinctio voluptatem cumque porro neque. Accusamus, incidunt rem?</p>
           </div>
         </div>
       </div>
@@ -605,7 +609,7 @@
   <footer class="bg-darkest" id="footer-3d">
     <!-- <iframe src='https://my.spline.design/cubeaxiswebsiteupdatedinprod-c7eb2ea95c5e22c50b14b5333ee86583/'
       frameborder='0' width='100%' class="min-h-screen"></iframe> -->
-    <div class="relative h-screen">
+    <div class="relative h-screen overflow-hidden">
       <model-viewer class="w-[100vw] h-screen" src="./assets/img/3_d_text_copy.gltf" alt="VR Headset"
         touch-action="pan-y" camera-controls disable-zoom ar ios-src="./assets/img/3_d_text_copy.gltf"></model-viewer>
 
