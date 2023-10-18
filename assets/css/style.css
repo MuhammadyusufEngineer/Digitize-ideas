@@ -12,6 +12,11 @@
     src: url('../font/Herokid-RegularExpanded.otf');
 }
 
+/* @font-face {
+    font-family: 'normal';
+    src: url('../font/Open_Sans/OpenSans-VariableFont_wdth,wght.ttf');
+} */
+
 @font-face {
     font-family: 'light';
     src: url('../font/Herokid-LightExpanded.otf');
@@ -153,38 +158,41 @@ button {
     transition: all 3s;
 }
 
+
 @keyframes marquee {
     0% {
         transform: translateX(0);
-        transition: all 3s;
 
     }
 
     100% {
         transform: translateX(-100%);
-        transition: all 3s;
     }
 
 }
 
-.project-item {
-    --spacing: 4rem;
-    height: 70vh;
-    top: var(--spacing);
-    z-index: 4;
+.cursor .img-wrapper {
+    display: flex;
+    gap: 1vw;
+    /* transform: rotate(90deg); */
+    animation: liveSite 1s infinite linear;
+    /* transition: transform 3s; */
 }
 
-.project-item:nth-child(2) {
-    top: calc(var(--spacing) * 2);
-    z-index: 3;
+.cursor .img-wrapper img {
+    display: inline;
 }
 
-.project-item:nth-child(3) {
-    top: calc(var(--spacing) * 3);
-    z-index: 2;
-}
+@keyframes liveSite {
+    0% {
+        transform: translateX(0) rotate(90deg);
+        transition: all 3s;
 
-.project-item:nth-child(4) {
-    top: calc(var(--spacing) * 4);
-    z-index: 1;
+    }
+
+    100% {
+        transform: translateX(100%) rotate(90deg);
+        transition: all 3s;
+    }
+
 }

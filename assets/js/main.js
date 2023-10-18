@@ -9,6 +9,11 @@
 //     // Remove the loader
 //     document.body.classList.remove('loading');
 // });
+let arrowUp = `<img src="./assets/img/arrow-up-dark.png">`
+let body = document.querySelector('body')
+function toggleScrolling(condition) {
+    body.style.overflowY = condition ? "scroll" : 'hidden'
+}
 
 function registerScrollTrigger() {
     gsap.registerPlugin(ScrollTrigger)
@@ -20,10 +25,18 @@ let menuList = document.querySelector('.menu-list')
 menuBtn.onclick = () => {
     let btnImgs = document.querySelectorAll('.menu-btn img')
     btnImgs.forEach(i => i.classList.toggle('hidden'))
-    let isMenuActive = menuList.classList.contains('-left-full') ? ['-left-full', 'left-0'] : ['left-0', '-left-full']
+    let isMenuActive;
+    if (menuList.classList.contains('-left-full')) {
+        isMenuActive = ['-left-full', 'left-0']
+        toggleScrolling(false)
+    } else {
+        isMenuActive = ['left-0', '-left-full']
+    }
+    toggleScrolling(true)
     // let isBtnActive = menuBtn.classList.contains('active') ? './assets/img/menu.png' : './assets/img/close.png'
     // menuBtn.classList.toggle('active')
     menuList.classList.replace(...isMenuActive)
+
     // menuBtn.querySelector('img').src = isBtnActive
 }
 
@@ -135,6 +148,7 @@ window.onload = () => {
     toggleCursor()
 }
 
+let liveSite = document.querySelector('.live-site')
 
 // // // CURSOR FOLLOWER
 let cursor = document.querySelector('.cursor')
@@ -156,14 +170,14 @@ document.onmousemove = (e) => {
 function mouseEntr(text) {
     let p = cursor.querySelector('p')
     cursor.classList.remove('w-[1vw]', 'h-[1vw]')
-    cursor.classList.add('w-[4vw]', 'h-[4vw]')
+    cursor.classList.add('w-[4vw]', 'h-[4vw]', 'p-[1vw]')
     p.innerHTML = text
     p.classList.replace('scale-0', 'scale-100')
 }
 
 function mouseLeave() {
     let p = cursor.querySelector('p')
-    cursor.classList.remove('w-[4vw]', 'h-[4vw]')
+    cursor.classList.remove('w-[4vw]', 'h-[4vw]', 'p-[1vw]')
     cursor.classList.add('w-[1vw]', 'h-[1vw]')
     p.classList.replace('scale-100', 'scale-0')
 }
@@ -176,22 +190,46 @@ footer3D.onmouseleave = () => {
     mouseLeave()
 }
 
+liveSite.onmouseenter = () => {
+    mouseEntr(arrowUp)
+}
+
+liveSite.onmouseleave = () => {
+    mouseLeave()
+}
+
 const projectItems = document.querySelectorAll('.project-item')
 projectItems.forEach(item => {
+    let popup = document.querySelector('.popup')
     item.onmouseenter = () => {
         mouseEntr('view')
+        cursor.classList.replace('mix-blend-difference', 'mix-blend-normal')
     }
     item.onmouseleave = () => {
         mouseLeave()
+        cursor.classList.replace('mix-blend-normal', 'mix-blend-difference')
     }
     item.onclick = () => {
-        item.classList.remove('relative')
-        item.classList.add('absolute', 'top-0', 'left-0', 'w-full', 'h-full')
+        popup.classList.replace('translate-y-[50px]', 'translate-y-0')
+        popup.classList.replace('opacity-0', 'opacity-100')
+        popup.classList.replace('-z-10', 'z-50')
+        toggleScrolling(false)
     }
-    item.ondblclick = () => {
-        item.classList.remove('absolute', 'top-0', 'left-0', 'w-full', 'h-full')
-        item.classList.add('relative')
+    document.querySelector('.close-popup').onclick = () => {
+        popup.classList.replace('translate-y-0', 'translate-y-[50px]')
+        popup.classList.replace('opacity-100', 'opacity-0')
+        popup.classList.replace('z-50', '-z-10')
+        toggleScrolling(true)
     }
+    document.querySelector('.close-popup').onmouseover = () => {
+        cursor.style.transform = 'scale(2)'
+    }
+    document.querySelector('.close-popup').onmouseleave = () => {
+        cursor.style.transform = 'scale(1)'
+    }
+    // popup.onmouseenter = () => {
+    //     cursor.classList.replace('mix-blend-normal', 'mix-blend-difference')
+    // }
 
 })
 

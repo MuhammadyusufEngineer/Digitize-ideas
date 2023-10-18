@@ -17,6 +17,7 @@ module.exports = {
         bold: ['bold'],
         regular: ['regular'],
         light: ['light'],
+        // normal: ['normal'],
       }
     },
   },
