@@ -9,6 +9,7 @@
 //     // Remove the loader
 //     document.body.classList.remove('loading');
 // });
+
 let arrowUp = `<img src="./assets/img/arrow-up-dark.png">`
 let body = document.querySelector('body')
 function toggleScrolling(condition) {
@@ -39,6 +40,63 @@ menuBtn.onclick = () => {
 
     // menuBtn.querySelector('img').src = isBtnActive
 }
+
+// Accordion
+
+const accItem = document.querySelectorAll('.accordion-item')
+const accTitle = document.querySelectorAll('.accordion-title')
+
+accTitle.forEach(title => {
+    title.onclick = () => {
+        accItem.forEach(item => {
+            item.classList.remove('active')
+            title.parentElement.classList.add('active')
+        })
+    }
+})
+
+const groups = gsap.utils.toArray(".accordion-item");
+const menus = gsap.utils.toArray(".accordion-title");
+
+const animations = [];
+
+groups.forEach(group => createAnimation(group));
+
+menus.forEach(menu => {
+    menu.addEventListener("click", () => toggleAnimation(menu));
+});
+
+function toggleAnimation(menu) {
+    // Save the current state of the clicked animation
+    const selectedReversedState = menu.animation.reversed();
+
+    // Reverse all animations
+    animations.forEach(animation => animation.reverse());
+
+    // Set the reversed state of the clicked accordion element to the opposite of what it was before
+    menu.animation.reversed(!selectedReversedState);
+}
+
+function createAnimation(element) {
+    const menu = element.querySelector(".accordion-title");
+    const box = element.querySelector(".accordion-content");
+    const icon = element.querySelector(".accordion-icon");
+
+    gsap.set(box, { height: "auto" })
+    gsap.set(icon, { translate: 'rotate(45deg)' })
+
+    // Keep a reference to the animation on the menu item itself
+    const tween = gsap.from(box, {
+        height: 0,
+        duration: 0.5,
+        ease: "power2.inOut",
+        reversed: true
+    });
+
+    menu.animation = tween;
+    animations.push(tween);
+}
+
 
 // nav-link hover animation
 let elements = document.querySelectorAll('.nav-link')
@@ -75,7 +133,7 @@ elements.forEach(element => {
 
 // load animations
 
-function animations() {
+function loadAnimation() {
     gsap.from('.logo, nav li, .menu-btn', 2, {
         top: '5vw',
         opacity: 0,
@@ -144,7 +202,7 @@ function animations() {
 
 window.onload = () => {
     registerScrollTrigger()
-    animations()
+    loadAnimation()
     toggleCursor()
 }
 
@@ -222,7 +280,7 @@ projectItems.forEach(item => {
         toggleScrolling(true)
     }
     document.querySelector('.close-popup').onmouseover = () => {
-        cursor.style.transform = 'scale(2)'
+        cursor.style.transform = 'scale(3)'
     }
     document.querySelector('.close-popup').onmouseleave = () => {
         cursor.style.transform = 'scale(1)'
