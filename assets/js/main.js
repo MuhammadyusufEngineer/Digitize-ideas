@@ -55,49 +55,6 @@ accTitle.forEach(title => {
     }
 })
 
-const groups = gsap.utils.toArray(".accordion-item");
-const menus = gsap.utils.toArray(".accordion-title");
-
-const animations = [];
-
-groups.forEach(group => createAnimation(group));
-
-menus.forEach(menu => {
-    menu.addEventListener("click", () => toggleAnimation(menu));
-});
-
-function toggleAnimation(menu) {
-    // Save the current state of the clicked animation
-    const selectedReversedState = menu.animation.reversed();
-
-    // Reverse all animations
-    animations.forEach(animation => animation.reverse());
-
-    // Set the reversed state of the clicked accordion element to the opposite of what it was before
-    menu.animation.reversed(!selectedReversedState);
-}
-
-function createAnimation(element) {
-    const menu = element.querySelector(".accordion-title");
-    const box = element.querySelector(".accordion-content");
-    const icon = element.querySelector(".accordion-icon");
-
-    gsap.set(box, { height: "auto" })
-    gsap.set(icon, { translate: 'rotate(45deg)' })
-
-    // Keep a reference to the animation on the menu item itself
-    const tween = gsap.from(box, {
-        height: 0,
-        duration: 0.5,
-        ease: "power2.inOut",
-        reversed: true
-    });
-
-    menu.animation = tween;
-    animations.push(tween);
-}
-
-
 // nav-link hover animation
 let elements = document.querySelectorAll('.nav-link')
 
@@ -215,10 +172,15 @@ let height = cursor.offsetHeight
 let width = cursor.offsetWidth
 // let previousPageX = 0;
 
-let footer3D = document.querySelector('#footer-3d')
+let footer3D = document.querySelector('.footer-3d')
+let shadow = ''
+for (let i = 0; i < 30; i++) {
+    shadow += (shadow ? ',' : '') + -i * 1 + 'px ' + i * 1 + 'px 0 #d5ff3f'
+}
+footer3D.style.textShadow = shadow
 
 document.onmousemove = (e) => {
-    let currentPageX = e.pageX - width / 2
+    // let currentPageX = e.pageX - width / 2
     // currentPageX > previousPageX ? bee.style.cssText = 'transform: rotateY(0deg) translateX(-100%);' : bee.style.cssText = 'transform: rotateY(180deg) translateX(0%);'
     cursor.style.translate = `${e.pageX - width / 2}px ${e.pageY - height / 2}px`
     // bee.style.translate = `${e.pageX - width / 2}px ${e.pageY - height / 2}px`
@@ -241,7 +203,7 @@ function mouseLeave() {
 }
 
 footer3D.onmouseenter = () => {
-    mouseEntr('drag')
+    mouseEntr('sup?')
 }
 
 footer3D.onmouseleave = () => {
@@ -429,6 +391,48 @@ fadeElements.forEach(elem => {
 // });
 
 document.addEventListener('DOMContentLoaded', () => {
+    const groups = gsap.utils.toArray(".accordion-item");
+    const menus = gsap.utils.toArray(".accordion-title");
+
+    const animations = [];
+
+    groups.forEach(group => createAnimation(group));
+
+    menus.forEach(menu => {
+        menu.addEventListener("click", () => toggleAnimation(menu));
+    });
+
+    function toggleAnimation(menu) {
+        // Save the current state of the clicked animation
+        const selectedReversedState = menu.animation.reversed();
+
+        // Reverse all animations
+        animations.forEach(animation => animation.reverse());
+
+        // Set the reversed state of the clicked accordion element to the opposite of what it was before
+        menu.animation.reversed(!selectedReversedState);
+    }
+
+    function createAnimation(element) {
+        const menu = element.querySelector(".accordion-title");
+        const box = element.querySelector(".accordion-content");
+        const icon = element.querySelector(".accordion-icon");
+
+        gsap.set(box, { height: "auto", margin: '0 5vw 5vw' })
+        gsap.set(icon, { translate: 'rotate(45deg)' })
+
+        // Keep a reference to the animation on the menu item itself
+        const tween = gsap.from(box, {
+            height: 0,
+            margin: 0,
+            duration: 0.5,
+            ease: "power2.inOut",
+            reversed: true
+        });
+
+        menu.animation = tween;
+        animations.push(tween);
+    }
     class HoverImage {
         constructor(element, options) {
             this.el = element;

@@ -187,10 +187,32 @@ button {
     line-height: 1;
 }
 
-.accordion-item .accordion-content p {
+.accordion-item .accordion-content {
     margin: 0 50px 50px;
 }
+
+/* .accordion-item .accordion-content p {
+    padding: 0 50px 50px;
+} */
 
 .accordion-item.active .accordion-icon {
     rotate: 90deg;
 }
+
+.footer-3d {
+    /* Will override color (regardless of order) */
+    -webkit-text-stroke: 3px #d5ff3f;
+
+}
+
+/* 
+.footer-3d::before {
+    content: 'humblebee';
+    position: absolute;
+    top: 30px;
+    left: -30px;
+    color: rgba(0, 0, 0, 0.3);
+    text-shadow: none;
+    filter: blur(8px);
+    z-index: -1;
+} */
