@@ -30,6 +30,21 @@
     scroll-behavior: smooth;
 }
 
+/* 
+body {
+  -webkit-overflow-scrolling: touch;
+}
+someElement.ontouchstart = (e) => {
+    e.preventDefault();
+};
+body {
+  padding-right: {ScrollBarWidth}px;
+}
+view rawpreserve-scroll-bar.css hosted with ❤ by GitHub
+const documentWidth = document.documentElement.clientWidth;
+const windowWidth = window.innerWidth;
+ */
+
 body,
 a,
 button {

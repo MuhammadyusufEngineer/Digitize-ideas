@@ -18,6 +18,9 @@ module.exports = {
         regular: ['regular'],
         light: ['light'],
         // normal: ['normal'],
+      },
+      backgroundImage: {
+        gradient: 'repeating-linear-gradient(135deg, #292929, #171717, #292929 60vw)'
       }
     },
   },

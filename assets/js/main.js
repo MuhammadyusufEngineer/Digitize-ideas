@@ -10,6 +10,28 @@
 //     document.body.classList.remove('loading');
 // });
 
+function startLoader() {
+    gsap.set('body', { overflowY: 'hidden' })
+    let counterElement = document.querySelector('.counter')
+    let currentValue = 0
+
+    function updateCounter() {
+        if (currentValue === 100) return;
+        currentValue += Math.floor(Math.random() * 10) + 1
+
+        if (currentValue > 100) currentValue = 100;
+
+        counterElement.textContent = currentValue + '%'
+
+        let delay = Math.floor(Math.random() * 200) + 50
+        setTimeout(updateCounter, delay)
+    }
+
+    updateCounter()
+
+    toggleScrolling(false)
+}
+
 let arrowUp = `<img src="./assets/img/arrow-up-dark.png">`
 let body = document.querySelector('body')
 function toggleScrolling(condition) {
@@ -390,7 +412,28 @@ fadeElements.forEach(elem => {
 //     item.style.transitionDelay = `${speed}ms`;
 // });
 
-document.addEventListener('DOMContentLoaded', () => {
+window.addEventListener('DOMContentLoaded', () => {
+    startLoader()
+    loaderAnimation()
+    function loaderAnimation() {
+        gsap.to('.counter', 0.25, {
+            delay: 3.5,
+            opacity: 0
+        })
+        gsap.to('.bar', 3.5, {
+            delay: 3.5,
+            height: 0,
+            stagger: {
+                amount: 0.5
+            },
+            ease: 'power4.inOut',
+        })
+
+    }
+    setTimeout(() => {
+        document.querySelector('body').style.overflowY = 'scroll'
+    }, 6000)
+
     const groups = gsap.utils.toArray(".accordion-item");
     const menus = gsap.utils.toArray(".accordion-title");
 
