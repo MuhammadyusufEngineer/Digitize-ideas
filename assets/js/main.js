@@ -418,7 +418,7 @@ window.addEventListener('DOMContentLoaded', () => {
     function loaderAnimation() {
         gsap.to('.counter', 0.25, {
             delay: 3.5,
-            opacity: 0
+            opacity: 0,
         })
         gsap.to('.bar', 3.5, {
             delay: 3.5,
@@ -427,6 +427,11 @@ window.addEventListener('DOMContentLoaded', () => {
                 amount: 0.5
             },
             ease: 'power4.inOut',
+        })
+        gsap.to('.counter, .overlay', {
+            delay: 7,
+            className: "hidden",
+            overwrite: "flex"
         })
 
     }
