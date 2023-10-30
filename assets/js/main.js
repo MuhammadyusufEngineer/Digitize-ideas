@@ -223,14 +223,17 @@ function mouseLeave() {
     cursor.classList.add('w-[1vw]', 'h-[1vw]')
     p.classList.replace('scale-100', 'scale-0')
 }
-let eye = `<img src="./assets/img/eye.gif" autoplay loop alt="eye gif">`
+let eyeURL = document.querySelector('.eye-gif').src
+let liveSiteURL1 = document.querySelector('.live-site2').firstElementChild.src
+let liveSiteURL2 = document.querySelector('.live-site2').lastElementChild.src
+let eye = `<img src="${eyeURL}" autoplay loop alt="eye gif">`
 let arrowUP = `<div class="live-site relative w-[2vw] h-[2vw] mix-blend-difference flex items-center justify-center">
 <img
   class="absolute z-10 top-0 left-0 translate-0 translate-0 group-hover:-translate-y-[7vw] group-hover:translate-x-[7vw] group-hover:duration-500 w-[2vw]"
-  src="./assets/img/arrow-up-dark.png" alt="arrow up">
+  src="${liveSiteURL1}" alt="arrow up">
 <img
   class="absolute z-10 top-0 -translate-x-[7vw] translate-y-[7vw] group-hover:translate-x-0 group-hover:translate-y-0 group-hover:duration-500 ease-out left-0 w-[2vw]"
-  src="./assets/img/arrow-up-dark.png" alt="arrow up">
+  src="${liveSiteURL2}" alt="arrow up">
 </div>`
 // footer3D.onmouseenter = () => {
 //     mouseEntr(eye)
