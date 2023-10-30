@@ -32,7 +32,7 @@ function startLoader() {
     toggleScrolling(false)
 }
 
-let arrowUp = `<img src="./assets/img/arrow-up-dark.png">`
+// let arrowUp = `<img src="./assets/img/arrow-up-dark.png">`
 let body = document.querySelector('body')
 function toggleScrolling(condition) {
     body.style.overflowY = condition ? "scroll" : 'hidden'
@@ -223,17 +223,25 @@ function mouseLeave() {
     cursor.classList.add('w-[1vw]', 'h-[1vw]')
     p.classList.replace('scale-100', 'scale-0')
 }
+let eye = `<img src="./assets/img/eye.gif" autoplay loop alt="eye gif">`
+let arrowUP = `<div class="live-site relative w-[2vw] h-[2vw] mix-blend-difference flex items-center justify-center">
+<img
+  class="absolute z-10 top-0 left-0 translate-0 translate-0 group-hover:-translate-y-[7vw] group-hover:translate-x-[7vw] group-hover:duration-500 w-[2vw]"
+  src="./assets/img/arrow-up-dark.png" alt="arrow up">
+<img
+  class="absolute z-10 top-0 -translate-x-[7vw] translate-y-[7vw] group-hover:translate-x-0 group-hover:translate-y-0 group-hover:duration-500 ease-out left-0 w-[2vw]"
+  src="./assets/img/arrow-up-dark.png" alt="arrow up">
+</div>`
+// footer3D.onmouseenter = () => {
+//     mouseEntr(eye)
+// }
 
-footer3D.onmouseenter = () => {
-    mouseEntr('sup?')
-}
-
-footer3D.onmouseleave = () => {
-    mouseLeave()
-}
+// footer3D.onmouseleave = () => {
+//     mouseLeave()
+// }
 
 liveSite.onmouseenter = () => {
-    mouseEntr(arrowUp)
+    mouseEntr(arrowUP)
 }
 
 liveSite.onmouseleave = () => {
@@ -244,7 +252,7 @@ const projectItems = document.querySelectorAll('.project-item')
 projectItems.forEach(item => {
     let popup = document.querySelector('.popup')
     item.onmouseenter = () => {
-        mouseEntr('view')
+        mouseEntr(eye)
         cursor.classList.replace('mix-blend-difference', 'mix-blend-normal')
     }
     item.onmouseleave = () => {
@@ -466,7 +474,7 @@ window.addEventListener('DOMContentLoaded', () => {
         const box = element.querySelector(".accordion-content");
         const icon = element.querySelector(".accordion-icon");
 
-        gsap.set(box, { height: "auto", margin: '0 5vw 5vw' })
+        gsap.set(box, { height: "auto" })
         gsap.set(icon, { translate: 'rotate(45deg)' })
 
         // Keep a reference to the animation on the menu item itself
