@@ -206,10 +206,6 @@ button {
     margin: 0 50px 50px;
 }
 
-/* .accordion-item .accordion-content p {
-    padding: 0 50px 50px;
-} */
-
 .accordion-item.active .accordion-icon {
     rotate: 90deg;
 }
@@ -223,21 +219,25 @@ button {
 .live-site img:nth-child(1) {
     animation: live-1 0.7s ease infinite;
     translate: 0vw, 0vw;
+    background: red
 }
 
 .live-site img:nth-child(2) {
     animation: live-2 0.7s ease infinite;
     translate: -7vw, 7vw;
+    background: red
 }
 
 @keyframes live-1 {
     100% {
+        background: red;
         transform: translate(7vw, -7vw);
     }
 }
 
 @keyframes live-2 {
     100% {
+        background: red;
         transform: translate(0vw, 0vw);
     }
 }
