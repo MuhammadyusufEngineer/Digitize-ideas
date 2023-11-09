@@ -12,11 +12,6 @@
     src: url('../font/Herokid-RegularExpanded.otf');
 }
 
-/* @font-face {
-    font-family: 'normal';
-    src: url('../font/Open_Sans/OpenSans-VariableFont_wdth,wght.ttf');
-} */
-
 @font-face {
     font-family: 'light';
     src: url('../font/Herokid-LightExpanded.otf');
@@ -165,9 +160,16 @@ button {
 
 /* animations */
 
-.fade {
+.reveal-animation {
+    filter: blur(8px);
     opacity: 0;
     transform: translate(0, 5vw);
+}
+
+.fade {
+    filter: blur(0);
+    opacity: 1;
+    transform: translate(0, 0);
     transition: 0.5s ease-out;
 }
 
