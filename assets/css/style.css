@@ -87,6 +87,7 @@ button {
     background-color: #000;
     transform-origin: bottom right;
     transition: transform 0.5s ease-out;
+    z-index: 50;
 }
 
 .underline-animation:hover:after {

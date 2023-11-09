@@ -1,6 +1,5 @@
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { imagesLoaded } from "imagesloaded"
 gsap.registerPlugin(ScrollTrigger);
 function startLoading() {
     // Remove the loader
@@ -49,6 +48,34 @@ function startLoader() {
 
     toggleScrolling(false)
 }
+// Just fun thing to log to the console
+function customLog() {
+    fetch('https://httpbin.org/ip')
+        .then(response => response.json())
+        .then(data => {
+            const userIP = data.origin;
+            getUserLocation(userIP);
+        })
+        .catch(error => {
+            console.error('Error fetching user IP: ' + error);
+        });
+
+    function getUserLocation(ip) {
+        fetch(`http://ip-api.com/json/${ip}`)
+            .then(response => response.json())
+            .then(data => {
+                const city = data.city;
+                console.log(`%cHey There! ${city} is awesome place to be!`, customLogStyles())
+            })
+            .catch(error => {
+                error
+                console.log(`%cHey There, Good to see here!`, customLogStyles());
+            });
+    }
+}
+function customLogStyles() {
+    return `color: #d5ff3f; font-size: 5vw; font-family: sans-serif; font-weight: bold; background: rgba(0,0,0,.5);`
+}
 
 // disable or enable scrolling on popup and mobile menu
 let body = document.querySelector('body')
@@ -61,7 +88,7 @@ let menuBtn = document.querySelector('.menu-btn')
 let menuList = document.querySelector('.menu-list')
 let menuItems = menuList.querySelectorAll('li')
 menuBtn.onclick = toggleMobileMenu
-menuItems.forEach(item => item.onclick = toggleMobileMenu)
+window.innerWidth < 768 ? menuItems.forEach(item => item.onclick = toggleMobileMenu) : customLog();
 
 // show or hide mobile menu
 function toggleMobileMenu() {
@@ -117,7 +144,6 @@ navItems.forEach(element => {
     element.appendChild(textContainer)
     element.appendChild(textContainer.cloneNode(true))
 })
-
 
 // load animations
 function loadingAnimation() {
@@ -206,7 +232,6 @@ function loadingAnimation() {
     })
 
     if (window.innerWidth < 768) {
-        cursor.classList.replace('flex', 'hidden')
         gsap.from('.copy, .mobile-btn', 2, {
             y: '5vw',
             opacity: 0,
@@ -315,7 +340,7 @@ let arrowUP = `<div class="live-site relative w-[2vw] h-[2vw] mix-blend-differen
   src="${liveSiteURL2}" alt="arrow up">
 </div>`
 
-let liveSite = document.querySelectorAll('.live-site')
+let liveSite = document.querySelectorAll('a.hover-animation')
 for (let item of liveSite) {
     item.onmouseenter = () => {
         mouseEntrToEl(arrowUP, 1, 4, 0, 100)
