@@ -302,7 +302,7 @@ let width = cursor.offsetWidth
 document.onmousemove = (e) => {
     // let currentPageX = e.pageX - width / 2
     // currentPageX > previousPageX ? bee.style.cssText = 'transform: rotateY(0deg) translateX(-100%);' : bee.style.cssText = 'transform: rotateY(180deg) translateX(0%);'
-    cursor.style.translate = `${e.pageX - width / 2}px ${e.pageY - height / 2}px`
+    cursor.style.transform = `translate(${e.clientX}px, ${e.clientY}px)`
     // bee.style.translate = `${e.pageX - width / 2}px ${e.pageY - height / 2}px`
     // previousPageX = currentPageX
 }

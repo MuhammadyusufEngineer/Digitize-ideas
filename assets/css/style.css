@@ -40,11 +40,11 @@ const documentWidth = document.documentElement.clientWidth;
 const windowWidth = window.innerWidth;
  */
 
-body,
+/* body,
 a,
 button {
     cursor: none;
-}
+} */
 
 ::-webkit-scrollbar-track {
     cursor: col-resize;
