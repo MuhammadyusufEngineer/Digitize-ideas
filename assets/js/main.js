@@ -1,6 +1,7 @@
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-gsap.registerPlugin(ScrollTrigger);
+import { gsap } from 'gsap'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
+
+gsap.registerPlugin(ScrollTrigger)
 function startLoading() {
     // Remove the loader
     startLoader()
@@ -49,33 +50,6 @@ function startLoader() {
     toggleScrolling(false)
 }
 // Just fun thing to log to the console
-function customLog() {
-    fetch('https://httpbin.org/ip')
-        .then(response => response.json())
-        .then(data => {
-            const userIP = data.origin;
-            getUserLocation(userIP);
-        })
-        .catch(error => {
-            console.error('Error fetching user IP: ' + error);
-        });
-
-    function getUserLocation(ip) {
-        fetch(`https://ip-api.com/json/${ip}`)
-            .then(response => response.json())
-            .then(data => {
-                const city = data.city;
-                console.log(`%cHey There! ${city} is awesome place to be!`, customLogStyles())
-            })
-            .catch(error => {
-                error
-                console.log(`%cHey There, Good to see here!`, customLogStyles());
-            });
-    }
-}
-function customLogStyles() {
-    return `color: #d5ff3f; font-size: 5vw; font-family: sans-serif; font-weight: bold; background: rgba(0,0,0,.5);`
-}
 
 // disable or enable scrolling on popup and mobile menu
 let body = document.querySelector('body')
@@ -88,7 +62,7 @@ let menuBtn = document.querySelector('.menu-btn')
 let menuList = document.querySelector('.menu-list')
 let menuItems = menuList.querySelectorAll('li')
 menuBtn.onclick = toggleMobileMenu
-window.innerWidth < 768 ? menuItems.forEach(item => item.onclick = toggleMobileMenu) : customLog();
+window.innerWidth < 768 ? menuItems.forEach(item => item.onclick = toggleMobileMenu) : '';
 
 // show or hide mobile menu
 function toggleMobileMenu() {
@@ -288,21 +262,17 @@ function loadingAnimation() {
     }
 }
 
-window.onload = () => {
-
-}
-
-// // // CURSOR FOLLOWER
 let cursor = document.querySelector('.cursor')
-// let bee = document.querySelector('.bee')
-let height = cursor.offsetHeight
-let width = cursor.offsetWidth
+// // let bee = document.querySelector('.bee')
+// // // // CURSOR FOLLOWER
 // let previousPageX = 0;
 
 document.onmousemove = (e) => {
+    let width = cursor.offsetWidth
+    let height = cursor.offsetHeight
     // let currentPageX = e.pageX - width / 2
     // currentPageX > previousPageX ? bee.style.cssText = 'transform: rotateY(0deg) translateX(-100%);' : bee.style.cssText = 'transform: rotateY(180deg) translateX(0%);'
-    cursor.style.transform = `translate(${e.clientX}px, ${e.clientY}px)`
+    cursor.style.transform = `translate(${e.clientX - width / 2}px, ${e.clientY - height / 2}px)`
     // bee.style.translate = `${e.pageX - width / 2}px ${e.pageY - height / 2}px`
     // previousPageX = currentPageX
 }
@@ -310,7 +280,7 @@ document.onmousemove = (e) => {
 function mouseEntrToEl(html = '', num1, num2, num3, num4) {
     let p = cursor.querySelector('p')
     cursor.classList.remove(`w-[${num1}vw]`, `h-[${num1}vw]`)
-    cursor.classList.add(`w-[${num2}vw]`, `h-[${num2}vw]`, 'p-[1vw]')
+    cursor.classList.add(`w-[${num2}vw]`, `h-[${num2}vw]`)
     p.innerHTML = `${html}`
     p.classList.replace(`scale-${num3}`, `scale-${num4}`)
 
@@ -332,15 +302,15 @@ let liveSiteURL1 = document.querySelector('.live-site2').firstElementChild.src
 let liveSiteURL2 = document.querySelector('.live-site2').lastElementChild.src
 let eye = `<img src="${eyeURL}" class="w-[3vw] h-[3vw]" alt="eye gif">`
 let arrowUP = `<div class="live-site relative w-[2vw] h-[2vw] mix-blend-difference flex items-center justify-center">
-<img
+  <img
   class="absolute z-10 top-0 left-0 translate-x-0 translate-y-0 group-hover:duration-500 w-[2vw] h-[2vw]"
   src="${liveSiteURL1}" alt="arrow up">
-<img
+  <img
   class="absolute z-10 top-0 left-0 -translate-x-[7vw] translate-y-[7vw] group-hover:duration-500 ease-out w-[2vw] h-[2vw]"
   src="${liveSiteURL2}" alt="arrow up">
-</div>`
+  </div>`
 
-let liveSite = document.querySelectorAll('a.hover-animation')
+let liveSite = document.querySelectorAll('a')
 for (let item of liveSite) {
     item.onmouseenter = () => {
         mouseEntrToEl(arrowUP, 1, 4, 0, 100)
